@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**
+            将所有段落设置为红色字体
+            标签选择器：
+                作用: 根据标签名来选中指定的元素
+                语法: 标签名{}
+                例子: p{} h1{} div{}
+        */
+        /* p {
+            color: red;
+        }
+        
+        h1 {
+            color: green;
+        } */
+        /**
+            将儿童相见不相识设置红色
+            id选择器：
+                作用：根据元素的id属性值选中一个元素
+                语法：#id属性值{}
+                例子：#box{} #red{}
+        */
+
+        #red {
+            color: red;
+        }
+
+        /**
+            将秋水和落霞两句设置红色
+            类选择器，和id类似，不同的是class可以重复使用，
+            可以通过class属性给元素分组,可以同时为一个元素指定多个class属性：
+                作用：根据元素的class属性选中一组元素
+                语法：.class属性值{}
+                例子：.blue{}
+        */
+
+        .blue {
+            color: blue;
+        }
+
+        .font_size {
+            font-size: 30px;
+        }
+
+        /*
+        通配选择器
+            作用:选中所有的元素
+            语法: *{}
+        */
+
+        * {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>我是H1标题</H1>
+    <p>少小离家老大回</p>
+    <p>乡音无改鬓毛催</p>
+    <p id="red">儿童相见不相识</p>
+    <p>笑问客从合出来</p>
+    <p class="blue font_size">秋水共长天一色</p>
+    <p class="blue">落霞与孤鹜齐飞</p>
+</body>
+
+</html>
