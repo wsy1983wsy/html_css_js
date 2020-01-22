@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            父元素不设置高度，由内容撑起
+            设置了高度，则由高度值决定
+        */
+        .outer {
+            background-color: #bfa;
+        }
+
+        .iner {
+            width: 100px;
+            background-color: yellow;
+            height: 200px;
+            margin-bottom: 100px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-bottom: 500px;
+            overflow: visible;
+            overflow: hidden;
+            overflow: scroll;
+            overflow: auto;
+        }
+
+        .box2 {
+            width: 100px;
+            background-color: red;
+            height: 400px;
+            /*
+                子元素是在父元素的内容区中排列，
+                如果子元素的大小超过了父元素，则子元素会从父元素中溢出
+                使用overflow，属性来设置如何处理溢出的子元素
+                可选值：
+                    visible：默认值，子元素会从父元素中溢出，在父元素外部的位置显示
+                    hidden：溢出内容将会被裁剪，不会显示
+                    scroll：生成两个滚动条，通过滚动条来查看完整的内容
+                    auto：根据需要生成滚动条
+                overflow-x //单独处理水平方向
+                overflow-y //单独处理垂直方向
+                
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。
+        这上面的夜的天空，奇怪而高，我生平没有见过这样的奇怪而高的天空，他仿佛要离开人间而去，使人们仰面不再看见。然而现在却非常之蓝，闪闪地夹着几十个星星的眼，冷眼。他的口角上现出微笑，似乎自以为大有深意，而将繁霜洒在我的园里的野花草上。
+        我还不知道那些花草真叫什么名字，人们叫他们什么名字。我记得有一种开过极细小的粉红花，现在还在开着，但是更极细小了，她在冷的夜气中，瑟缩地做梦，梦见春的到来，梦见秋的到来，梦见瘦的诗人将眼泪擦在她最末的花瓣上，告诉她秋虽然来，冬虽然来，而此后接着还是春，蝴蝶乱飞，蜜蜂都唱起春词来了。她于是一笑，虽然颜色冻得红惨惨地，仍然瑟缩着。
+    </div>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <div class="outer">
+        <div class="iner"></div>
+        <div class="iner"></div>
+    </div>
+
+</body>
+
+</html>
