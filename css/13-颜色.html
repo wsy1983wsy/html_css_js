@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            /*
+                颜色单位：
+                    - 在css中直接使用颜色名，blue，red，yellow，... 但是非常不方便，记不住，不方便描述
+                    - RGB值，通过三种颜色的不同浓度来配出不同的颜色
+                        R:red G:green B:blue
+                        每一种颜色取值范围0~255之间
+                        语法：RGB(红色，绿色，蓝色)
+                    -RGBA值，增加了a透明度
+                        0：完全透明，1：完全不透明，.5半透明
+                    -十六进制，#aabbcc
+
+            */
+            background-color: red;
+            background-color: rgb(255, 0, 0);
+            background-color: rgb(0, 255, 0);
+            background-color: rgba(0, 255, 0, .5);
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+</body>
+
+</html>

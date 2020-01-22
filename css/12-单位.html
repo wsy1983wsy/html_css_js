@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        .box1 {
+            /*
+                长度单位：
+                    像素：屏幕（显示器）实际上是由一个一个小点点构成的，不同屏幕的像素大小不同，像素越小，显示的屏幕显示效果越清晰
+                        同样的200px，在不同的设备下显示效果不一样
+                    百分比：设置相对于其父元素的百分比，好处：子元素跟随父元素的改变而改变
+                    em:相对于字体大小，1em= 1 font-size，根据字体大小的改变而改变
+                    rem:相对于根元素的字体大小来计算的，
+            */
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box2 {
+            width: 50%;
+            height: 50%;
+            background-color: aqua;
+        }
+
+        .box3 {
+            font-size: 20px;
+            width: 10rem;
+            height: 10em;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"> box2</div>
+    </div>
+    <div class="box3"></div>
+</body>
+
+</html>
