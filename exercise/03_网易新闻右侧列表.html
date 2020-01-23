@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>网易右侧新闻列表</title>
+    <style>
+        body {
+            background-color: #bfa;
+        }
+
+        .news-list {
+            width: 300px;
+            background-color: #fff;
+            margin: 50px auto;
+            border-top: 1px solid;
+        }
+
+        .title {
+            border-top: 1px #f34540 solid;
+            line-height: 41px;
+            font-size: 16px;
+            margin-top: -1px;
+            height: 41px;
+            font-weight: bold;
+            display: inline-block;
+            text-decoration: none;
+            color: #404040
+        }
+
+        .title:hover {
+            color: red;
+        }
+
+        .news-img {
+            width: 300px;
+        }
+
+        .news-img-title {
+            margin-top: -30px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 10px;
+            line-height: 20px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .news-list-text {
+            margin-top: 20px;
+            width: 300px;
+            list-style: none;
+        }
+
+        .news-list-text li {
+            overflow: hidden;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            list-style: none;
+        }
+        .news-list-text li::before{
+            content: '■';
+            color: rgb(218, 218, 218);
+            font-size: 12px;
+            margin-right: 4px;
+        }
+        .news-list-text li a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .news-list-text li a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="news-list">
+        <div class="news-title">
+            <h2>
+                <a href="#" class="title">财经</a>
+            </h2>
+        </div>
+        <div>
+            <a href="#">
+                <img src="images/163.webp" class="news-img">
+            </a>
+            <p class="news-img-title"><strong class="new-img-title-strong">"</strong>愿不愿见特朗普？任正非：我见他干吗？</p>
+        </div>
+        <ul class="news-list-text">
+            <li>
+                <a href="#">武汉旅客大量退团 旅行社却不退团费</a>
+            </li>
+            <li>
+                <a href="#">奔驰女晒照扯出低调富豪</a>
+            </li>
+            <li>
+                <a href="#">浙江口罩商3倍工资喊员工回厂加班：及最大所能</a>
+            </li>
+            <li>
+                <a href="#">预亏40亿加春节档疫情 万达电影：我太难了</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
