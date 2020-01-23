@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            /*
+                浮动元素不会盖住文字，文字会地洞环绕在浮动元素的周围，
+                    所以我们可以利用浮动来设置文字环绕图片的效果
+            */
+            float: left;
+        }
+
+        .box2 {
+            background-color: yellowgreen;
+            /*
+                元素设置浮动以后，将会从文档流中脱离后，元素的一些特点也会发生变化。
+                    脱离文档流特点：
+                        块元素：
+                            1、块元素不再独占页面的一行
+                            2、脱离文档流以后，块元素的宽度和高度默认都被内容撑开
+                        行内元素：
+                            行内元素脱离文档流后，会变成块元素，特点和块元素一样
+                    脱离文档流以后，不需要再区分块和行内元素了。
+            */
+            float: left;
+        }
+
+        .box3 {
+            background-color: orange;
+        }
+
+        .s1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            /* 设置浮动后，行高可以其效果了 */
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1"></div>
+    <p>在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。
+        这上面的夜的天空，奇怪而高，我生平没有见过这样的奇怪而高的天空，他仿佛要离开人间而去，使人们仰面不再看见。然而现在却非常之蓝，闪闪地夹着几十个星星的眼，冷眼。他的口角上现出微笑，似乎自以为大有深意，而将繁霜洒在我的园里的野花草上。
+        我还不知道那些花草真叫什么名字，人们叫他们什么名字。我记得有一种开过极细小的粉红花，现在还在开着，但是更极细小了，她在冷的夜气中，瑟缩地做梦，梦见春的到来，梦见秋的到来，梦见瘦的诗人将眼泪擦在她最末的花瓣上，告诉她秋虽然来，冬虽然来，而此后接着还是春，蝴蝶乱飞，蜜蜂都唱起春词来了。她于是一笑，虽然颜色冻得红惨惨地，仍然瑟缩着。
+    </p> -->
+    <!-- <div class="box2">helloaaa</div>
+    <div class="box3">hello</div> -->
+    <span class="s1">我是一个span</span>
+</body>
+
+</html>

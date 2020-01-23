@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>W3School导航条</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .nav {
+            width: 1210px;
+            height: 48px;
+            background-color: #E8E7E3;
+            margin: 100px auto;
+        }
+
+        .nav li {
+            /* 设置里向左浮动，以使菜单横向排列 */
+            float: left;
+            /* 设置高度 */
+            height: 48px;
+            /*将文字自父元素中垂直居中*/
+            line-height: 48px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #777;
+            font-size: 18px;
+            /* 将a元素设置为块元素 */
+            display: block;
+            padding: 0 40px;
+        }
+
+        .nav a:hover {
+            background-color: #3f3f3f;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Broser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+
+</html>
