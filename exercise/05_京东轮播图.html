@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*设置图片的容器*/
+        .img-list {
+            margin: 0 auto;
+            width: 590px;
+            height: 470px;
+            list-style: none;
+            position: relative;
+        }
+
+        /*设置li*/
+        .img-list li {
+            position: absolute;
+        }
+
+        .img-list li:nth-child(4) {
+            z-index: 1;
+        }
+
+        .pointer {
+            position: absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 40px;
+        }
+
+        /*设置导航点的样式*/
+        .pointer a {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, .3);
+            /*设置元素向左浮动*/
+            float: left;
+            border-radius: 50%;
+            margin-left: 4px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        .pointer a:nth-child(4), .pointer a:hover {
+            background-color: white;
+            border: 2px solid rgba(255, 255, 255, .3)
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./images/05/1.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/2.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/3.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/4.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/5.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/6.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/7.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/05/8.jpg" alt=""></a></li>
+
+        <div class="pointer">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+
+</html>
