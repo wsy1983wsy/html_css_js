@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+        行高（line height）
+            指文字占有的实际高度
+                可以指定一个大小（px em）
+                也可以直接设置一个整数，行高将会是字体的指定的倍数
+            行高经常还用来设置文字的行间距，
+                行间距 = 行高-字体大小
+            可取值:
+                normal 默认值，但并不是一个固定值，受到font-family的影响，作用不大
+                数字，如line-height:1.5 意思指line-height最终大小为1.5*font-size,一般建议使用该值来设置line-height
+                长度，用的最多的就是px与em，em跟数字一样，都是相对于font-size来计算的。
+                百分比，也是相对于font-size来计算的
+                数组，em，百分比都是相对于font-size来计算的，存在继承方式不一样。对于数字，父元素设置了1.5，则子元素也是会继承1.5
+                但如果父元素设置的是1.5em，或者150%，假设父元素font-size是20px，则父元素line-height是30px，同时子元素的line-height也是30px，
+                也就是说子元素继承的是父元素计算后的line-height值。
+        字体框
+            字体框就是字体所在的格子，设置font-size实际上就是在设置字体框的高度
+        行高会在字体框的上下平均分配
+        可以将行高设置为和高度一样的值，使单行文字在一个元素中垂直居中
+        */
+        div {
+            color: red;
+            font-size: 50px;
+            border: 1px solid red;
+            line-height: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        今天天气真不错,how are you!
+    </div>
+</body>
+
+</html>
