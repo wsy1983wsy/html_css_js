@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a {
+            display: block;
+            width: 93px;
+            height: 29px;
+            background-image: url("./images/09/btn.png");
+        }
+
+        a:hover {
+            background-position: -93px 0;
+        }
+
+        a:active {
+            background-position: -186px 0;
+        }
+
+        /* 
+        解决图片闪烁的问题
+            可以将多个小图片统一保存到一个大图片中，通过调整 background-position来显示相应的图片
+            这样图片会同时加载到网页中，就可以有效的避免出现闪烁的问题
+            这个技术在网页中应用十分光放，被称为css-Sprite，这种图成为雪碧图
+         */
+    </style>
+</head>
+
+<body>
+    <a href="#"></a>
+</body>
+
+</html>
