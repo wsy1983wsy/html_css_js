@@ -219,7 +219,7 @@
     width: 850px;
     height: 100%;
     line-height: 100px;
-    padding-left: 58px;
+    padding-left: 18px;
 }
 
 .nav-wrapper li a {
@@ -257,4 +257,49 @@
     border-top: 1px solid rgb(224, 224, 224);
     box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
     height: 228px;
+}
+
+.search-wrapper {
+    width: 296px;
+    /*height: 50px;*/
+    background-color: red;
+    float: right;
+    margin-top: 25px;
+    border: 1px solid rgb(224, 224, 224);
+    box-sizing: border-box;
+}
+
+.search-wrapper .search-inp {
+    float: left;
+    padding: 0;
+    border: none;
+    height: 50px;
+    width: 242px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+/*设置input获取焦点后的样式*/
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button {
+    border-color: #ff6700;
+}
+
+.search-wrapper .search-btn {
+    float: left;
+    height: 50px;
+    width: 52px;
+    background-color: #fff;
+    border: none;
+    color: #616161;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.search-wrapper .search-btn:hover {
+    background-color: #ff6700;
+    color: white;
+    border: none;
 }
