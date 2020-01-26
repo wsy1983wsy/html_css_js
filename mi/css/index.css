@@ -154,3 +154,107 @@
 .shop-cart:hover .cart-info::before {
     display: block;
 }
+
+.header-wrapper {
+    position: relative;
+}
+
+/*设置中间的header*/
+.header {
+    height: 100px;
+}
+
+.header .logo {
+    float: left;
+    margin-top: 22px;
+    height: 55px;
+    width: 55px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    /*隐藏logo的文字*/
+    text-indent: -9999px;
+}
+
+/*设置超链接样式*/
+.header .logo a {
+    position: absolute;
+    height: 55px;
+    width: 55px;
+    left: 0;
+    background-image: url("../img/mi-logo.png");
+    background-size: 55px;
+    background-position: center;
+    background-color: #ff6700;
+    transition: left .3s;
+}
+
+.header .logo .home {
+    left: -55px;
+    background-image: url("../img/mi-home.png");
+    background-color: #ff6700;
+}
+
+/*设置鼠标移入图标效果*/
+.header .logo:hover .mi {
+    left: 55px;
+}
+
+.header .logo:hover .home {
+    left: 0px;
+}
+
+/*设置中间的导航条*/
+.header .nav-wrapper {
+    float: left;
+    margin-left: 7px;
+}
+
+/*设置导航条中的链接*/
+.nav-wrapper li {
+    float: left;
+}
+
+.header .nav {
+    width: 850px;
+    height: 100%;
+    line-height: 100px;
+    padding-left: 58px;
+}
+
+.nav-wrapper li a {
+    display: block;
+    font-size: 16px;
+    margin-right: 20px;
+    color: #333;
+}
+
+.nav-wrapper li a:hover {
+    color: #ff6700;
+}
+
+/*隐藏全部商品*/
+.all-goods {
+    visibility: hidden;
+}
+
+.nav .goods-info {
+    height: 0px;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    /*border-top: 1px solid rgb(224, 224, 224);*/
+    /*box-shadow: 0 5px 5px rgba(0, 0, 0, .2);*/
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: height .3s;
+    z-index: 9999;
+}
+
+/*.nav li:not(:first-of-type):not(:nth-child(9)):not(:nth-child(10)):hover ~ .goods-info, .goods-info:hover {*/
+.nav .show-goods:hover ~ .goods-info, .goods-info:hover {
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    height: 228px;
+}
