@@ -211,8 +211,23 @@
 }
 
 /*设置导航条中的链接*/
-.nav-wrapper li {
+.nav > li {
     float: left;
+}
+
+.all-goods-wrapper {
+    position: relative;
+}
+
+.left-menu {
+    width: 234px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    z-index: 999;
+    left: -80px;
+    line-height: 1;
+    padding: 20px 0;
 }
 
 .header .nav {
@@ -220,9 +235,11 @@
     height: 100%;
     line-height: 100px;
     padding-left: 18px;
+    color: white;
 }
 
-.nav-wrapper li a {
+
+.nav > li a {
     display: block;
     font-size: 16px;
     margin-right: 20px;
@@ -302,4 +319,22 @@
     background-color: #ff6700;
     color: white;
     border: none;
+}
+
+
+.nav .left-menu li a {
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    margin-right: 0;
+    padding: 0 30px;
+}
+.nav .left-menu li a:hover {
+    background-color: #ff6700;
+}
+
+.nav .left-menu li a i {
+    float: right;
+    line-height: 42px;
 }
