@@ -76,12 +76,17 @@
 }
 
 
-.app-wrapper:hover > .app .qrcode {
+/*.app-wrapper:hover > .app .qrcode {*/
+/*    display: block;*/
+/*}*/
+.app:hover .qrcode, .app:hover::before {
     display: block;
 }
 
 /*设置app下的小三角*/
-.app-wrapper:hover .app::before {
+/*.app-wrapper:hover .app::before {*/
+.app::before {
+    display: none;
     width: 0;
     height: 0;
     border: 8px solid transparent;
