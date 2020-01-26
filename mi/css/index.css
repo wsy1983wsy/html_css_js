@@ -62,9 +62,10 @@
 }
 
 .app .qrcode {
-    display: none;
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
     width: 124px;
-    height: 148px;
     background-color: white;
     line-height: 1;
     text-align: center;
@@ -73,6 +74,8 @@
     /*计算获得*/
     left: -40px;
     z-index: 999;
+    /*transition 为样式设置过渡效果*/
+    transition: height 0.3s;
 }
 
 
@@ -81,6 +84,7 @@
 /*}*/
 .app:hover .qrcode, .app:hover::before {
     display: block;
+    height: 148px;
 }
 
 /*设置app下的小三角*/
