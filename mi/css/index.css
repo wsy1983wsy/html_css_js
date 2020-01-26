@@ -410,3 +410,22 @@
     right: 0;
     background-position: -42px 0;
 }
+
+/*设置回到顶部的元素*/
+.back-top {
+    width: 26px;
+    height: 206px;
+    background-color: red;
+    position: fixed;
+    bottom: 60px;
+    /*right值设置为视口宽度的50%*/
+    right: 50%;
+    margin-right: -639px;
+    /**
+     布局等式
+        left + margin-left + width + margin-right + right = 视口宽度
+        auto + 0 + 26 + 0 + 60 = 视口宽度
+        right设置为50%后等式为
+         auto + 0 + 26 + 0 + 50% = 视口宽度
+     */
+}
