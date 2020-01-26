@@ -330,6 +330,7 @@
     margin-right: 0;
     padding: 0 30px;
 }
+
 .nav .left-menu li a:hover {
     background-color: #ff6700;
 }
@@ -337,4 +338,75 @@
 .nav .left-menu li a i {
     float: right;
     line-height: 42px;
+}
+
+.banner {
+    position: relative;
+    height: 460px;
+}
+
+.banner .img-list {
+    width: 100%;
+}
+
+.banner .img-list li {
+    position: absolute;
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.pointer {
+    position: absolute;
+    bottom: 22px;
+    right: 35px;
+}
+
+.pointer a {
+    float: left;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, .4);
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    margin-left: 6px;
+}
+
+.pointer a:hover, .pointer a.active {
+    background-color: rgba(255, 255, 255, .4);
+    border: 2px solid rgba(0, 0, 0, .4);
+
+}
+
+/*设置两个箭头*/
+.pre-next a {
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url("../img/icon-slides.png")
+}
+
+.pre-next .prev {
+    left: 234px;
+    background-position: -84px 0;
+}
+
+.pre-next .prev:hover {
+    left: 234px;
+    background-position: 0 0;
+}
+
+.pre-next .next {
+    right: 0;
+    background-position: -125px 0;
+}
+
+.pre-next .next:hover {
+    right: 0;
+    background-position: -42px 0;
 }
