@@ -1,0 +1,59 @@
+/*主页index.html的样式表*/
+/*顶部导航条容器*/
+.top-bar-wrapper {
+    /*设置宽度全屏*/
+    width: 100%;
+    background-color: #333;
+    /*行高，保证文字垂直居中*/
+    line-height: 40px;
+    height: 40px;
+}
+
+/*设置顶部的超链接的颜色*/
+.top-bar a {
+    font-size: 12px;
+    color: #b0b0b0;
+    display: block;
+}
+
+/*设置超链接移入的效果*/
+.top-bar a:hover {
+    color: white;
+}
+
+/*设置分割线*/
+.top-bar .line {
+    font-size: 12px;
+    margin: -1px 8px 0px;
+    color: #424242;
+}
+
+/*顶部左侧导航栏*/
+.service, .top-bar li {
+    float: left;
+}
+
+.shop-cart, .user-info {
+    float: right;
+}
+
+.shop-cart {
+    margin-left: 26px;
+}
+
+/*购物车的样式*/
+.shop-cart a {
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+
+.shop-cart:hover a {
+    background-color: white;
+    color: #ff6700;
+}
+
+.shop-cart i {
+    margin-right: 2px;
+}
+
