@@ -9,6 +9,8 @@ body {
     color: #333;
     background-color: #fff;
     min-width: 1226px;
+    height: 1500px;
+    overflow: auto;
 }
 
 /*设置一个类，用来表示中间容器的宽度*/
