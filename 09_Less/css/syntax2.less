@@ -1,0 +1,67 @@
+.box1 {
+    .box2 {
+        color: red;
+    }
+
+    >.box3 {
+        color: white;
+    }
+
+    /*为box1设置一个hover
+    &表示外层的父元素，相当于当前元素
+    */
+    &:hover {
+        color: orange;
+    }
+
+    div & {
+        widows: 100px;
+    }
+}
+
+.p1 {
+    width: 100px;
+    height: 200px;
+}
+
+/*:extend()多当前选择器扩展指定选择器的样式（选择器分组）*/
+.p2:extend(.p1) {
+    color: red;
+}
+
+.p3 {
+    /*直接对指定的样式进行引用，这里就相当于将p1的样式在这里进行了复制*/
+    /*mixin复合*/
+    .p1();
+}
+
+.p4() {
+    width: 100px;
+    height: 200px;
+    background-color: #bfa;
+}
+
+/*
+使用类选择器时可以在选择器后边添加一个括号，这是我们实际上创建了一个mixin
+*/
+.p5 {
+    .p4();
+}
+
+/**混合函数 ,在混合函数中直接设置变量*/
+.test(@w: 100px, @h: 200px, @bg-color: red) {
+    width: @w;
+    height: @h;
+    border: 1px solid @bg-color;
+}
+
+div {
+    /*
+        调用混合函数，按照顺序传递参数
+        可以按照顺序进行传值
+        也可以指定参数名称
+    */
+    // .test(200px,200px,red);
+    // .test(@bg-color: red, @w: 200px, @h: 200px);
+    .test(200px);
+}
