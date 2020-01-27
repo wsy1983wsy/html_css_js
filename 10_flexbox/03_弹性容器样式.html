@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 800px;
+            border: 10px solid red;
+            /*将url设置为弹性容器*/
+            display: flex;
+            flex-wrap: wrap;
+
+            /*
+            align-items 元素在辅轴上如何对齐
+                元素箭的关系
+                可选值：
+                    stretch 默认值 将元素长度设为相同的值，
+                    flex-start 元素不会被拉伸，沿着辅轴起边对齐
+                    flex-end 元素不会被拉伸，沿着辅轴终边边对齐
+                    center 元素不会被拉伸，居中对齐
+                    baseline 基线对齐
+            */
+            /* justify-content: center; */
+            align-items: flex-start;
+            /*
+            align-content 辅轴空白空间的分布
+                取值与justify-content相同
+            */
+            align-content: space-between;
+        }
+
+        li {
+            width: 200px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+        }
+
+        li:first-child {
+            /* align-self 用来覆盖弹性元素上的align-items */
+            align-self: stretch;
+        }
+
+        li:nth-child(2) {
+            background-color: pink;
+        }
+
+        li:nth-child(3) {
+            background-color: orange;
+        }
+
+        li:nth-child(4) {
+            background-color: yellow;
+        }
+
+        li:nth-child(5) {
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>
+            2
+            <div>2</div>
+        </li>
+        <li>
+            3
+            <div>3</div>
+            <div>3</div>
+        </li>
+        <li>1</li>
+        <li>
+            2
+            <div>2</div>
+        </li>
+    </ul>
+</body>
+
+</html>
