@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+        媒体特性：
+            width：视口的宽度
+            height：视口的高度
+            min-width: 视口大于指定值时生效
+            max-width： 是否小于指定值时生效
+         */
+        /* @media(max-width:500px) {
+            body {
+                background-color: #bfa;
+            }
+        } */
+        /* 样式切换的分界点。我们称其为断电，也就是网页的样式会在这个点时发生变化
+            一般情况常用的断电
+            小于768 超小屏幕 max-width=768px
+            大于768 小屏幕 min-width=768px
+            大于992 中型屏幕 min-width = 992px
+            大于1200 大屏幕 min-width = 1200px
+            
+            and表示与，同时满足
+        */
+        @media only screen and (min-width:500px) and (max-width: 700px) {
+            body {
+                background-color: #bfa;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

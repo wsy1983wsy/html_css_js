@@ -22,7 +22,7 @@
 
         td {
             border: 1px solid black;
-            height: 100px;
+            height: 30px;
             vertical-align: middle;
             text-align: center;
         }
@@ -30,20 +30,16 @@
         /* 隔行的背景色 */
         /*偶数行*/
         /* table tr:nth-child(even) { */
-        table tr:nth-child(2n) {
+        tbody>tr:nth-child(2n) {
             background-color: #bfa;
         }
 
-        /*奇数行*/
-        /* table tr:nth-child(odd) { */
-        /* table tr:nth-child(2n+1) {
-            background-color: orange;
-        } */
-        /*
+        /*奇数行
         如果表格中没有使用tbody而是直接使用tr
             浏览器会自动创建一个tbody，并肩tr全部放到tbody中
             tr不是table的子元素
         */
+        /*tbody>tr:nth-child(odd) { */
         tbody>tr:nth-child(2n+1) {
             background-color: orange;
         }

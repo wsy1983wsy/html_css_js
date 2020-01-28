@@ -14,39 +14,24 @@
             background-color: #bfa;
             margin: 0 auto;
             margin-top: 200px;
-            /*
-            变形就是通过css来改变元素的形状或位置
-            - 变形不会影响页面的布局
-            - transform 用来社会元素的变形效果
-                - 平移
-                    translateX() 沿着X轴方向平移
-                    translateY() 沿着Y轴方向平移
-                    translateZ() 沿着Z轴方向平移
-                        平移元素时，百分比是相对于自身计算的
-
-            */
+            /* 向下移动自身高度的50% */
             transform: translateY(50%);
         }
 
-        /*.box2 {*/
-        /*    width: 200px;*/
-        /*    height: 200px;*/
-        /*    background-color: orange;*/
-        /*    margin: 0 auto;*/
-        /*}*/
+
         .box3 {
             background-color: orange;
+            /* 绝对定位 */
             position: absolute;
-            /*这种方式只使用用于元素的大小确定*/
-            /*top: 0;*/
-            /*bottom: 0;*/
-            /*left: 0;*/
-            /*right: 0;*/
-            /*margin: auto;*/
-
+            /* left为视口的50% ，元素的左上角距离视口的左上角，水平方向为视口的宽度的50%*/
             left: 50%;
+            /* top为视口的50%，元素的左上角距离视口的左上角，垂直方向为视口的高度的50% */
             top: 50%;
-            /*多个translate用空格隔开*/
+            /*
+                多个translate用空格隔开，
+                向左移动自身宽度的50%，
+                向上移动自身高度的50%，这样可以保证元素的中心点与视口的中心点重合
+            */
             transform: translateX(-50%) translateY(-50%);
         }
 
@@ -60,14 +45,16 @@
         }
 
         .box4:hover, .box5:hover {
+            /* 向上移动10个像素 */
             transform: translateY(-10px);
+            /* 增加阴影效果 */
             box-shadow: 0 0 10px rgba(0, 0, 0, .3);
         }
     </style>
 </head>
 <body>
 <div class="box1"></div>
-<div class="box2"></div>
+<!-- box3要在视口中居中显示 -->
 <div class="box3">aaaa</div>
 <div class="box4">aaaa</div>
 <div class="box5">aaaa</div>
