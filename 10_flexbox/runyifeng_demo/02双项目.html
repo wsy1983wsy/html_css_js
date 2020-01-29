@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/base.css">
+    <title>阮一峰flex 双项目</title>
+    <style>
+        .box2 {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .box3 {
+            flex-direction: column;
+        }
+
+        .box4 {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box5 {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box6 {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .box7 {
+            flex-direction: row;
+        }
+
+        .box7 .item:nth-child(2) {
+            align-self: center;
+        }
+
+        .box8 {
+            justify-content: space-between;
+        }
+
+        .box8 .item:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        .box9 {
+            flex-direction: row-reverse;
+        }
+
+        .box10 {
+            flex-direction: column-reverse;
+        }
+
+        .box11 {
+            flex-direction: row-reverse;
+            align-items: flex-end;
+        }
+
+        .box11 .item:nth-child(2) {
+            align-self: center;
+        }
+
+        .box12 .item:nth-child(2) {
+            align-self: center;
+        }
+
+        .box12 .item:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        .box13 {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: space-between;
+        }
+
+        .box14 {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .column {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box2">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box9">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box3">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box4">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box10">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box5">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box6">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box7">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box11">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box8">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box12">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box13">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box14">
+        <section class="column">
+            <span class="item"></span>
+            <span class="item"></span>
+        </section>
+        <section class="column">
+            <span class="item"></span>
+            <span class="item"></span>
+        </section>
+    </div>
+</body>
+
+</html>
