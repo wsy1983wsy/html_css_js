@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            /* 给父级添加flex属性 */
+            display: flex;
+            /*row 默认的主轴是x轴 行 row ,y轴就是侧轴，元素从左到右排列*/
+            flex-direction: row;
+            /*row-reverse 主轴是x轴，y轴是侧轴，元素从右到左排列 */
+            flex-direction: row-reverse;
+            /*column 主轴是y轴，x轴是侧轴，元素从上到下排列 */
+            flex-direction: column;
+            /*column-reverse 主轴是y轴，x轴是侧轴，元素从下到上排列 */
+            flex-direction: column-reverse;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- flex布局中不存在行内元素和块元素之分，都可以设置宽高 -->
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

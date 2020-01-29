@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            /* 给父级添加flex属性 */
+            display: flex;
+            flex-direction: column;
+            /* justify-content主轴上子项的排列方式 */
+            /* 
+                flex-start 默认值，从头开始排列 
+                flex-end 从尾部开始排列
+                center 在主轴居中对齐
+                space-around 平分剩余空间，项目之间的间隔是项目与父容器边框之间间隔的两个，相当于每个项目两边都有margin
+                space-between 先两边贴边，再平分剩余空间，项目与父容器边框没有空间
+                space-evenly 均匀排列每个元素,每个元素之间的间隔相等，项目与父容器边框，项目之间的间隔都一样
+
+                flex-direction为column，justify-content为center，可以保证元素垂直居中
+            */
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-evenly;
+            justify-content: space-around;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- flex布局中不存在行内元素和块元素之分，都可以设置宽高 -->
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>

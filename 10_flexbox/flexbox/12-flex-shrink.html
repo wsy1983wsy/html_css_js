@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 300px;
+            background-color: pink;
+            /* 给父级添加flex属性 */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            flex-shrink: 0;
+        }
+
+        div span:nth-child(3) {
+            background-color: yellow;
+            /* flex-shrink为0.2，由于总共需要收缩100，则可以收缩20 */
+            /* flex-shrink: 0.2; */
+            /* flex-shrink为1.2，由于总共需要收缩100，则收缩100 */
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- flex布局中不存在行内元素和块元素之分，都可以设置宽高 -->
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>
