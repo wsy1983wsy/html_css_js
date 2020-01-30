@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 基本数据类型都是单一的值，值和值之间没有任何的联系
+			 * 在js中来表示一个人的信息（name，gender）
+			 * 对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。
+			 * 对象分类：
+			 * 	1.内建对象
+			 * 		由ES标准中定义的对象，在任何的ES的实现中都可以使用
+			 * 		比如：Math，String， Number等
+			 * 	2.宿主对象
+			 * 		由js的运行环境提供的对象，目前来讲主要指浏览器提供的对象
+			 * 		比如 BOM DOM
+			 * 	3.自建对象
+			 * 		开发人员创建的对象
+			 */
+			//创建对象
+			/**
+			 * 使用new关键字调用的函数，是构造函数constructor
+			 * 构造函数是专门用来创建对象的函数
+			 * 使用typeof检查一个对象时，会返回object
+			 */
+			var obj = new Object();
+			console.log(obj);
+			/**
+			 * 在对象中保存的值称为属性
+			 * 向对象添加属性
+			 * 		语法：对象.属性名=属性值
+			 */
+			obj.name = "孙悟空";
+			obj.gender = "男";
+			obj.age = 18;
+			/**
+			 * 读取对象中的属性
+			 * 	语法：对象.属性
+			 */
+			console.log(obj.name);
+			// 读取中没有的属性，不会报错，而是undefined
+			console.log(obj.helllo);
+			// 修改对象的属性值
+			// 语法：对象.属性名=新属性值
+			obj.age = 20;
+			// 删除对象的属性
+			//语法：delete 对象.属性
+			delete obj.age;
+			/**
+			 * 如果要用特殊的属性名，不能采用.的方式来操作
+			 * 需要使用另一种方式：
+			 * 	语法：对象["属性名"] = 属性值
+			 * 读取时也需要采用这种方式
+			 * 使用[]这种形式去操作属性，更加的灵活
+			 * 在[]中可以直接传递一个变量，这样变量值时多少就会读取那个属性
+			 * 
+			 * js中属性值可以为任意类型，甚至是一个对象
+			 */
+			obj["123"] = 789;
+			console.log(obj["123"]);
+			var n = "123";
+			console.log(obj[n]);
+
+			var obj2 = new Object();
+			obj2.name = "猪八戒";
+			obj.test = obj2;
+			console.log(obj.test);
+			console.log(obj.test.name);
+
+			/**
+			 * in 运算符，检查一个对象中是否有指定的属性
+			 * 		如果有则返回true，没有则返回false
+			 * 语法：
+			 * 		"属性名" in 对象
+			 */
+
+			console.log("test2" in obj);
+			console.log("name" in obj);
+
+			/**
+			 * js中的变量都是保存到栈内存中
+			 * 		基本数据类型的值都是在栈内存中存储
+			 * 		值与值之间是独立存在的，修改一个变量不会影响其他的变量
+			 * 		
+			 * 		对象时保存都对内存中，每创建一个新的对象，就会在堆内存中开辟出一个新的空间
+			 * 		而变量保存的是对象的内存地址（对象的引用），如果两个变量保存的是同一个对象引用，
+			 * 		当通过一个对象修改属性时，另一个也会受到影响。
+			 * 		如果其中一个设置为null，只是将该对象保存的内存地址重置了，不影响另外一个对象。
+			 * 
+			 * 当比较两个引用对象时，比较的是内存地址，如果内存地址不同就返回false
+			 * 
+			 */
+
+			var obj3 = obj;
+			obj3.name = "zbj";
+			console.log(obj.name);
+
+			obj3 = null;
+			console.log(obj3);
+			console.log(obj);
+
+			/**
+			 * 使用字面量创建一个对象
+			 * var obj = {};
+			 * 使用字面量创建一个对象，可以在创建对象时，直接指定对象中的属性
+			 * 语法：{属性名:属性值,属性名:属性值,...}
+			 * 字面量的属性可以加引号也可以不加，建议不加，
+			 * 如果要使用一些特殊的名字，则必须加引号
+			 */
+
+			var obj4 = {};
+			obj4.name = "swk";
+			console.log(obj4);
+
+			var obj5 = {
+				name: "zbj",
+				age: 18,
+				gender: "男",
+				test:{
+					name:"shs"
+				}
+			};
+			console.log(obj5);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

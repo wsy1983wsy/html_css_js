@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 作用域
+			 * 一个变量的作用的范围
+			 * 一共有两种作用域
+			 * 	1.全局作用域
+			 * 		直接写在script标签中的js代码，都在全局作用域中，
+			 * 		在页面打开时创建，在页面关闭时销毁
+			 * 	在全局作用域中有一个全局对象window，代表的是一个浏览器的窗口，有浏览器创建我们可以直接适用
+			 * 在全局作用域中，创建的变量都会作为window对象的属性保存
+			 * 
+			 * 	2. 函数作用域
+			 * 		调用函数时创建函数作用域，函数执行完毕后，函数作用域销毁
+			 * 		每调用一次函数就会创建一个新的函数作用域，他们之间是相互独立的
+			 * 		函数作用域中，可以访问到全局作用域的变量,但是在全局作用域中无法访问函数作用域
+			 * 
+			 * 		当在函数中操作一个变量时，首先在自身作用域中查找，如果找到则直接使用，如果找不到则显示上一个作用域中查找。如果全局作用域中也找不到，则报ReferenceError
+			 */
+			var a = 123;
+
+			function fun() {
+				var b = 234;
+			}
+			fun();
+			var c = 10;
+			var d = 20;
+			console.log(window.c);
+			console.log(c);
+
+			// console.log(b);
+
+			/**
+			 * 函数中也存在变量声明提前问题
+			 * 函数声明也会提前
+			 * 函数中不使用var声明的变量都会成为全局变量
+			 */
+			function fun3() {
+				console.log(a);
+				var a = 35;
+				//d为全局作用域变量，
+				e = 100;
+			}
+			fun3();
+			console.log(e);
+			/**
+			 * 定义形参，相当于在函数作用域中声明了变量
+			 */
+			function fun4(e) {
+				console.log(e); //此时e为undefined
+			}
+			fun4();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

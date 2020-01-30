@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var obj = new Object();
+			obj.name = "swk";
+			obj.age = 18;
+			/**
+			 * 函数也可以成为对象的属性
+			 * 如果一个函数作为一个对象的属性保存
+			 * 那么我们称这个函数是对象的方法
+			 * 调用函数就是调用对象的方法（method）
+			 * 
+			 */
+			obj.sayName = function() {
+				console.log(obj.name);
+			}
+			//调用方法
+			obj.sayName();
+
+			function fun() {
+				console.log(obj.name);
+			}
+			//调函数
+			fun();
+			//字面量创建对象，并设置方法
+			var obj2 = {
+				name: "zbj",
+				age: 10,
+				sayName: function() {
+					console.log(this.name);
+				}
+			};
+			obj2.sayName();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 变量的声明提前
+			 * 适用var关键字声明的变量，会在所有的代码执行之前被声明。
+			 * 	如果声明变量时不使用var关键字，则变量不会被声明提前
+			 * console.log("a = ", a); // a = undefinded
+			 * var a = 123;
+			 * 
+			 * 相当于 :
+			 * 	var a;
+			 * 	console.log("a = ", a);
+			 *	a = 123;
+			 * 
+			 * console.log("a = ", a);//报错
+			 *  a = 123;//a不会声明提前
+			 * 
+			 * 函数的声明提前
+			 * 	使用函数声明形式创建的函数function 函数名(){}
+			 * 		会在所有的代码之心之前就被创建，所以我们可以在函数声明前来调用函数
+			 * 	使用函数表达式创阿金的函数，不会被声明提前，所以不能再声明前调用
+			 * 
+			 */
+			console.log("a = ", a);
+			var a = 123;
+
+			fun();
+			/**
+			 * 这个函数声明会被声明提前到调用之前
+			 */
+			function fun() {
+				console.log("我是一个fun函数");
+			}
+			
+			var fun2 = function() {
+				console.log("我是一个fun2函数");
+			}
+			fun2();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
