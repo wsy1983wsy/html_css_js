@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 运算符也叫操作符
+			 * 	通过运算符可以对一个或多个值进行运算，并获取运算结果
+			 * 	比如：typeof 就是一个运算符，可以获取一个值得额类型
+			 *  +
+			 * 		可以对两个值进行加法运算，并将结果返回
+			 * 		对非number类型的值进行+操作，先转为number，再执行+操作
+			 * 		任何的值和字符串做加法操作，都会先转换为字符串，然后在和字符串做拼接操作
+			 * 	-
+			 * 		任何类型都需要转为number，然后再做减法操作
+			 *  *
+			 * 		任何类型都需要转为number，然后再做乘法操作
+			 * 	/
+			 * 		任何类型都需要转为number，然后再做除法操作
+			 *  %
+			 * 		取余数
+			 */
+			var a = 123;
+			var result = typeof a;
+			console.log(result);
+			console.log(a + 1);
+			result = 123 + 456;
+			console.log(result);
+			result = true + false;
+			console.log(result);
+			result = 2 + null;
+			console.log(result);
+			result = 2 + NaN;
+			console.log(result);
+			result = 2 + undefined;
+			console.log(result);
+			result = 2 + "124";
+			console.log(typeof result);
+			console.log(result);
+			result = 1 + 2 + "3"; //先做加法后做拼接
+			console.log(result);
+			result = "1" + 2 + 3;
+			console.log(result);
+			result = "1" * 2;
+			console.log(result);
+			result = "8" / 2;
+			console.log(result);
+			result = "8" - 2;
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
