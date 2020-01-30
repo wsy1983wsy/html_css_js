@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 关系运算符
+			 * > >= < <= 
+			 * 非数值情况
+			 * 	对于非数值进行比较，会将其转换为数字然后再比较
+			 * 	对于字符串进行比较，不会将字符串转换为数字进行比较
+			 * 		而是将字符串中的每一个字符转为Unicode进行比较
+			 * 	如果两个字符一样，则进行下一个字符的比较。
+			 * 
+			 * 
+			 * 相等 == 相等返回true，不等返回false
+			 * 		如果类型不同，则会进行类型转换再进行对比
+			 *	unudefined 和 null 相等
+			 * 	NaN不和任何值相等，包含它本身
+			 * 
+			 * 不相等 != 
+			 * 
+			 * === 全等，先比较类型，然后再比较值
+			 * !== 不全等，先比较类型，然后再比较值
+			 * 
+			 */
+			console.log("a" < "b");
+
+			console.log("11" == 11);
+			var b = NaN;
+			console.log(b == NaN);
+			console.log(isNaN(b));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

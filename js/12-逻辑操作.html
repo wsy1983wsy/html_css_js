@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * ! 非操作，取反 
+			 * 	如果对非Boolean进行！操作，先转为boolean，然后执行！操作,利用此特点将非Boolean转为Boolean
+			 * && 与，对符号两侧的值进行与操作
+			 * 		只要有一个为false，则返回false
+			 * 		属于短路操作，如果第前面的为false，则不会再执行下面的检查
+			 * || 或者
+			 * 		只要有一个为true，则返回true
+			 * 		属于短路操作，如果第前面的为true，则不会在执行下面的检查
+			 * 
+			 * 对于非布尔值，进行与或运算，会先将其转换为布尔值，然后再运算，并且返回原值
+			 * 	与运算，如果第一个值为true，则必然返回第二个值的原值
+			 * 	与运算，如果第一个值为false，则直接返回第一个值的原值
+			 * 	或运算，如果第一个值为true，则直接返回第一个值的原值
+			 * 	或运算，如果第一个值为false，则直接返回第二个值的原值
+			 * 
+			 */
+			var b = 10;
+			console.log(!b);
+			console.log(!!b);
+			console.log(true && false);
+			console.log(true || false);
+			//与运算，如果两个值都是true，则返回后面的值
+
+			var result = 5 && 1;
+			console.log(result);
+			result = 0 && 1;
+			console.log(result);
+			result = 1 && 0;
+			console.log(result);
+			result = NaN && 0;
+			console.log(result);
+			result = 0 && NaN;
+			console.log(result);
+			//如果第一个值为true，则直接返回第一个值
+			result = 1 || 2;
+			console.log(result);
+			result = 2 || 1;
+			console.log(result);
+			result = 2 || NaN;
+			console.log(result);
+			//如果第一个值为false，则直接返回第二个值
+			result = NaN || 2;
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

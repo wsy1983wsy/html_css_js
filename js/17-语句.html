@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 
+			 * 程序是由一条一条的语句构成的
+			 * 语句是按照自上而下的顺序一条一条执行的
+			 * 一个{}中的语句我们也成为一个代码块
+			 * js中的代码块，只具有分组的左右，无其他任何用途，
+			 * 代码块内的内容，在外部是完全可见
+			 */
+			{
+				var a = 10;
+				console.log(a);
+			}
+			console.log(a);
+
+			var score = 63;
+			switch (true) {
+				case score >= 60:
+				console.log("合格");
+					break;
+				default:
+				console.log("不合格");
+					break;
+			}
+			for(var i = 0; i < 10; i++){
+				console.log(i);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 一元运算符
+			 * 	typeof
+			 * 	+ 正号  不会对数字产生任何影响
+			 * 	- 负号
+			 * 
+			 * 		对于非number类型，需要先转为number，原理和Number函数一样
+			 */
+			var a = 123; +
+			a;
+			console.log(a);
+			a = -a;
+			console.log(a);
+			a = true;
+			a = -a;
+			console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
