@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		/**
+		 * 创建一个对象
+		 */
+		var obj = {
+			name: "swk",
+			age: 18,
+			gender: "男",
+			sayName: function () {
+				console.log(this.name);
+			}
+		};
+		var obj2 = {
+			name: "zbj",
+			age: 28,
+			gender: "男",
+			sayName: function () {
+				console.log(this.name);
+			}
+		};
+		var obj3 = {
+			name: "shs",
+			age: 38,
+			gender: "男",
+			sayName: function () {
+				console.log(this.name);
+			}
+		};
+		/**
+		 * 使用工厂方法创建对象
+		 * 	通过该方法可以大批量的创建对象
+		 * 使用工厂方法创建的对象，使用的构造函数都是Object
+		 * 所以创建的对象都是Object，无法区分类型
+		 */
+		function createPerson(name, age, gender) {
+			//创建一个新的对象
+			var obj = new Object();
+			//向对象中添加属性
+			obj.name = name;
+			obj.age = age;
+			obj.gender = gender;
+			obj.sayName = function () {
+				console.log(this.name);
+			}
+			//将新的对象返回
+			return obj;
+		}
+		var obj4 = createPerson("swk", 18, "男");
+		console.log(obj4);
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

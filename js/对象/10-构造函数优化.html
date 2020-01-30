@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+		/**
+		* 创建一个Person构造函数
+            在Person构造函数中，为每一个对象斗提那家了一个sayName方法，
+            目前我们的方法是在构造函数中创建的，也就是构造函数每执行一次就会创建一个新的sayName方法，
+            也就是所有势力的sayName都是唯一的
+		*/
+        //将sayName方法在全局作用域中定义
+        //将污染全局作用域的命名空间，容易被覆盖掉
+        function fun() {
+            console.log(this.name);
+        }
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = fun;
+        }
+
+        var per = new Person("swk", 18, "male");
+        console.log(per);
+        var per2 = new Person("yutu", 16, "female");
+        var per3 = new Person("benboba", 19, "male");
+        console.log(per.sayName == per2.sayName);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
