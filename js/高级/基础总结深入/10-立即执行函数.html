@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立即执行函数</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /*
+        1.立即执行函数
+        
+        2.作用
+            隐藏实现
+            不会污染外部（全局）命名空间
+            用它来编写js模块
+        */
+        (function () {//匿名函数自调用
+            console.log(".....");
+        })();
+        var a = 4;
+        console.log(a);
+        (function () {
+            var a = 1;
+            function test() {
+                console.log(++a);
+            }
+            window.$ = function () {//向外暴露一个全局函数
+                return {
+                    test: test
+                };
+            }
+        }
+        )();
+        $().test();//$是一个函数，$执行后返回的是一个对象，
+        $().test();
+        $().test();
+        $().test();
+        $().test();
+    </script>
+</body>
+
+</html>
