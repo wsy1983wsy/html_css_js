@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button id="button1" onclick="alert('123')">我是一个button</button> -->
+    <button id="button1">我是一个button</button>
+    <script type="text/javascript">
+        /*
+        浏览器已经为我们提供 文档节点 对象，就是window属性
+        可以在页面中直接使用，文档节点代表的是整个网页
+        */
+        console.log(document);
+        var btn = document.getElementById("button1");
+        console.log(btn);
+        // 修改按钮的文字
+        btn.innerHTML = "修改后的button";
+        /*
+        事件，用户和浏览器之前的交互行为
+            比如：点击按钮，鼠标移动，关闭窗口
+        为按钮的对应事件绑定处理函数的形式来相应事件
+            这样当事件被触发时，就会执行相应的函数
+        */
+        //绑定一个单击事件
+        btn.onclick = function () {
+            alert("1234");
+        }
+    </script>
+</body>
+
+</html>
