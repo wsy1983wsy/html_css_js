@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var arr = ["a", "b", "c"];
+        /*
+            forEach遍历数组,该方法需要一个函数作为参数
+                这种函数，由我们创建但是不是由我们调用的，我们称为回调函数。
+                第一个参数，正在遍历的元素
+                第二个参数，正在遍历的元素的索引
+                第三个参数，正在遍历的数组
+            
+          */
+        arr.forEach(function (item, index, arr) {
+            console.log("item: ", item, " index: ", index, " arr: ", arr);
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

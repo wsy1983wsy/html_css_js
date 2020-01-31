@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        /**
+        内建对象
+    
+        宿主对象
+    
+        自定义对象
+    
+        数组（Array)
+            - 数组也是一个对象
+            - 和普通对象类似，也是用来存储一些值
+            - 不同的是普通对象时使用字符串作为属性名
+                而数组是使用数字来作为索引操作元素
+            - 索引： 从0开始的整数就是索引
+            - 数组的存储性能比对象要好，在开发中我们经常使用数组来存储一些数据
+        */
+        var arr = new Array();
+        console.log(arr);
+        console.log(typeof arr);
+
+        /**
+        向数组中添加对象
+        语法： 数组[索引] = 值
+        */
+        arr[0] = 10;
+        arr[1] = 33;
+        arr[2] = 22;
+        arr[3] = 22;
+        // arr[100] = 100;
+        /*
+            读取数组中的元素
+            语法：数组[索引]
+            如果读取不能存在的索引，不会报错，会返回undefined
+        */
+        console.log(arr[0]);
+        console.log(arr[3]);
+
+        /*
+            获取数组的长度
+            使用length属性来获取数组的长度
+            语法：数组.length
+
+            对于连续的数组，length返回的是数组的长度（元素的个数）
+            对于不连续的数组，length返回最大索引+1
+        */
+        console.log("length: ", arr.length);
+
+        /*
+            修改数组的长度
+            如果修改的length大于原长度，多出的部分空出来
+            如果修改的length小于原长度，则对出的元素被删除
+            语法：
+        */
+
+        arr.length = 10;
+        arr.length = 2;
+
+        //向数组的最后一个位置添加元素
+        arr[arr.length] = 70;
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
