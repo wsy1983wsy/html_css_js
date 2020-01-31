@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function fun() {
+            console.log(this);
+        }
+        /*
+          call 和 apply
+          这两个方法都是函数对象的方法，需要通过函数对象来调用
+          当对函数调用call和apply都会调用函数执行
+          在调用call和apply可以将一个对象指定为第一个参数，此时这个对象就成为函数中的this
+
+          call可将实参在对象之后一次传递
+          apply需要将实参封装到一个数组中统一传递
+
+          
+         */
+        fun.call();
+        fun.apply();
+        fun();
+
+        var obj = {
+            name: "obj",
+            sayName: function () {
+                console.log(this.name);
+            }
+        };
+        var obj2 = {
+            name: "obj2",
+            sayName: function () {
+                console.log(this.name);
+            }
+        };
+        fun.call(obj);
+        fun.apply(obj2);
+
+        obj.sayName.call(obj2);
+
+
+        function fun2(a, b) {
+            console.log(this, a, b);
+        }
+
+        fun2.call(obj,2,3);
+        fun2.apply(obj,[2,3]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
