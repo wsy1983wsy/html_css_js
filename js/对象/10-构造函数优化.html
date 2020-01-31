@@ -20,7 +20,10 @@
             this.name = name;
             this.age = age;
             this.gender = gender;
-            this.sayName = fun;
+            // this.sayName = fun;
+        }
+        Person.prototype.sayName = function(){
+            console.log(this.name);
         }
 
         var per = new Person("swk", 18, "male");
@@ -28,6 +31,8 @@
         var per2 = new Person("yutu", 16, "female");
         var per3 = new Person("benboba", 19, "male");
         console.log(per.sayName == per2.sayName);
+        per.sayName();
+        per2.sayName();
 
     </script>
 </head>
