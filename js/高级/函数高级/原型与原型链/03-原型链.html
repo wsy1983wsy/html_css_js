@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+        原型链
+            访问一个对象的属性时，
+                先在自身属性中查找，找到就返回
+                如果没有，再沿着__proto__这条链向上查找，找到就返回
+                一直找到Object对象，
+                如果最终没找到，返回undefined
+            别名：隐式原型链
+            作用：查找对象的属性（方法）
+        函数的显式原型指向的对象默认是空Object实例对象(但Object不满足)
+        所有函数都是Function的实例（包含Function）
+        Object 的原型对象时原型链尽头
+        */
+        console.log(Object);
+        console.log(Object.prototype);
+        console.log(Object.prototype.__proto__);
+        function Fn() {
+            this.test1 = function () {
+                console.log("test1");
+            }
+        }
+        console.log(Fn.prototype);
+        Fn.prototype.test2 = function () {
+            console.log("test2");
+        }
+        var fn = new Fn();
+        fn.test1();
+        fn.test2();
+        console.log(fn.toString());
+        console.log(fn.test3);
+        // fn.test3();
+        console.log(Fn.prototype instanceof Object);//true
+        console.log(Object.prototype instanceof Object);//false
+        console.log(Function.prototype instanceof Object);//true
+        //所有函数都是Function的实例（包含Function）
+        console.log(Function.__proto__ == Function.prototype);
+        //Object 的原型对象时原型链尽头
+        console.log(Object.prototype.__proto__);//null
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

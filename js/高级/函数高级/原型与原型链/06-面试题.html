@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function A() {
+
+        }
+        A.prototype.n = 1;
+        var b = new A();
+        //将A的prototype更换为新的Object对象
+        A.prototype = {
+            n: 2,
+            m: 3
+        };
+        var c = new A();
+        console.log(b.n, b.m, c.n, c.m);//1 undefined 2 3
+
+        function F() {
+
+        }
+        Object.prototype.a = function () {
+            console.log("a");
+        }
+        Function.prototype.b = function () {
+            console.log("b");
+        }
+
+        var f = new F();
+        // f.a();
+        // f.b();
+        // F.a();
+        // F.b();
+        console.log(f);
+        console.log(Object.prototype);
+        console.log(Function.__proto__);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
