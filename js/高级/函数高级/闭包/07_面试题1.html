@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题1</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    /*
+     说说它们的输出情况
+     */
+
+    //代码片段一
+    var name = "The Window";
+    var object = {
+      name: "My Object",
+      getNameFunc: function () {//外部函数
+        return function () {//内部函数，没有引用外部函数的变量，没有产生闭包
+          return this.name;
+        };
+      }
+    };
+
+    console.log(object.getNameFunc()());  //等同于var fn = object.getNameFunc();fn(); ===>this指向window  The window
+
+    //代码片段二
+    var name2 = "The Window";
+    var object2 = {
+      name2: "My Object",
+      getNameFunc: function () {//外部函数
+        var that = this;//产生闭包
+        return function () {//内部函数，使用了外部函数的变量that，that为object2，  My Object
+          return that.name2;
+        };
+      }
+    };
+    console.log(object2.getNameFunc()()); //
+  </script>
+</body>
+
+</html>
