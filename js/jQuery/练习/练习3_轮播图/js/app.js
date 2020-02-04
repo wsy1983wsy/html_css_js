@@ -48,7 +48,7 @@ $(function () {
   // 6. 点击圆点图标切换到对应的页
   $points.click(function () {
     var targetIndex = $(this).index()
-    if(targetIndex!=index) {
+    if (targetIndex != index) {
       nextPage(targetIndex)
     }
   })
@@ -60,7 +60,7 @@ $(function () {
    *  false: 翻到上一页
    *  数值: 翻到指定页
    */
-  function nextPage (next) {
+  function nextPage(next) {
     /*
     移动的总距离: offset=?
     移动的总时间: time=500ms
@@ -69,21 +69,21 @@ $(function () {
     启动循环定时器不断移动, 到达目标位置时清除定时器
      */
     // 如果正在翻页, 此次翻页请求不执行
-    if(moving) {
+    if (moving) {
       return
     }
     moving = true // 标识正在翻页中
 
     var offset = 0 //移动的总距离
     // 计算offset
-    if(typeof next==='boolean') {
+    if (typeof next === 'boolean') {
       offset = next ? -PAGE_WIDTH : PAGE_WIDTH
     } else {
       offset = -PAGE_WIDTH * (next - index)
     }
 
     // 计算单元移动的距离
-    var itemOffset = offset/(TIME/ITEM_TIME)
+    var itemOffset = offset / (TIME / ITEM_TIME)
     // 当前的left
     var currLeft = $list.position().left
     // 目标的left
@@ -92,16 +92,16 @@ $(function () {
     var intervalId = setInterval(function () {
       // 计算当前要设置的left
       currLeft += itemOffset
-      if(currLeft===targetLeft) {
+      if (currLeft === targetLeft) {
         //清除定时器
         clearInterval(intervalId)
         //标识翻页完成
         moving = false
 
         // 如果滑动到了最左边的图片, 直接跳转到最右边的第2张图片
-        if(currLeft===0) {
+        if (currLeft === 0) {
           currLeft = -PAGE_WIDTH * imgCount
-        } else if(currLeft===-PAGE_WIDTH*(imgCount+1)) {
+        } else if (currLeft === -PAGE_WIDTH * (imgCount + 1)) {
           // 如果滑动到了最右边的图片, 直接跳转到最左边的第2张图片
           currLeft = -PAGE_WIDTH
         }
@@ -120,19 +120,19 @@ $(function () {
    * 更新标识圆点
    * @param next
    */
-  function updatePoints (next) {
+  function updatePoints(next) {
     var targetIndex = 0
     // 计算目标下标
-    if(typeof next==='boolean') {
-      if(next) {
+    if (typeof next === 'boolean') {
+      if (next) {
         targetIndex = index + 1
-        if(targetIndex===imgCount) {
+        if (targetIndex === imgCount) {
           targetIndex = 0
         }
       } else {
-        targetIndex = index-1
-        if(targetIndex===-1) {
-          targetIndex = imgCount-1
+        targetIndex = index - 1
+        if (targetIndex === -1) {
+          targetIndex = imgCount - 1
         }
       }
     } else {
