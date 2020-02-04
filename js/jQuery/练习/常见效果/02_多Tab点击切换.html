@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>02_多Tab点击切换</title>
@@ -24,7 +25,9 @@
       position: relative;
     }
 
-    #content1, #content2, #content3 {
+    #content1,
+    #content2,
+    #content3 {
       width: 300px;
       height: 100px;
       padding: 30px;
@@ -33,51 +36,58 @@
       left: 0;
     }
 
-    #tab1, #content1 {
+    #tab1,
+    #content1 {
       background-color: #ffcc00;
     }
 
-    #tab2, #content2 {
+    #tab2,
+    #content2 {
       background-color: #ff00cc;
     }
 
-    #tab3, #content3 {
+    #tab3,
+    #content3 {
       background-color: #00ccff;
     }
   </style>
 </head>
-<body>
-<h2>多Tab点击切换</h2>
-<ul id="tab">
-  <li id="tab1" value="1">10元套餐</li>
-  <li id="tab2" value="2">30元套餐</li>
-  <li id="tab3" value="3">50元包月</li>
-</ul>
-<div id="container">
-  <div id="content1">
-    10元套餐详情：<br/>&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
-  </div>
-  <div id="content2" style="display: none">
-    30元套餐详情：<br/>&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
-  </div>
-  <div id="content3" style="display: none">
-    50元包月详情：<br/>&nbsp;每月无限量随心打
-  </div>
-</div>
 
-<script>
-  $(function () {
-    var index = 0
-    var $contents = $('#container>div')
-    $("#tab>li").click(function () {
-      var clickIndex = $(this).index()
-      if (clickIndex != index) {
-        $contents[index].style.display = 'none'
-        $contents[clickIndex].style.display = 'block'
-        index = clickIndex
-      }
-    })
-  })
-</script>
+<body>
+  <h2>多Tab点击切换</h2>
+  <ul id="tab">
+    <li id="tab1" value="1">10元套餐</li>
+    <li id="tab2" value="2">30元套餐</li>
+    <li id="tab3" value="3">50元包月</li>
+  </ul>
+  <div id="container">
+    <div id="content1">
+      10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+    </div>
+    <div id="content2" style="display: none">
+      30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+    </div>
+    <div id="content3" style="display: none">
+      50元包月详情：<br />&nbsp;每月无限量随心打
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      var curIndex = 0;
+      var contents = $("#container>div");
+      $("#tab>li").click(function () {//隐式遍历
+        // contents.css("display", "none");
+        contents[curIndex].style.display = "none";
+        //获取当前div在兄弟中的索引
+        //this当前点击的li的元素
+        var index = $(this).index();
+        contents[index].style.display = "block";
+        // $(contents[index]).css("display", "block");
+        curIndex = index;
+      });
+    });
+  </script>
 </body>
+
 </html>
