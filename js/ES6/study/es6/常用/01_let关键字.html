@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>01_let关键字</title>
+    <meta charset="UTF-8">
+    <title>01_let关键字</title>
 </head>
 <body>
 
@@ -25,8 +25,20 @@
   * 使用let取代var是趋势
 -->
 <script type="text/javascript">
+    //let 不存在变量提升
+    //console.log(username);
+    //let与var类似
+    let username = "kobe";
+    // let username = "wade";
+    console.log(username);
 
-
+    let btns = document.getElementsByTagName("button");
+    for (let i = 0; i < btns.length; i++) {
+        let btn = btns[i];
+        btn.onclick = function () {
+            console.log(i);
+        };
+    }
 </script>
 </body>
 

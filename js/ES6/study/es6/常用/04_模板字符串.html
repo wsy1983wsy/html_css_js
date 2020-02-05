@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>04_模板字符串</title>
+    <meta charset="UTF-8">
+    <title>04_模板字符串</title>
 </head>
 <body>
 <!--
@@ -11,7 +11,11 @@
   * 变化的部分使用${xxx}定义
 -->
 <script type="text/javascript">
-
+    let obj = {username: "a", age: 10};
+    let str = "name:" + obj.username + " age:" + obj.age;
+    console.log(str);
+    str = `name:${obj.username} age:${obj.age}`;
+    console.log(str);
 </script>
 </body>
 </html>

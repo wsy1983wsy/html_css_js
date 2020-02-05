@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>04_对象扩展</title>
+    <meta charset="UTF-8">
+    <title>04_对象扩展</title>
 </head>
 <body>
 <!--
@@ -16,8 +16,21 @@
 -->
 
 <script type="text/javascript">
+    console.log(0 == -0);
+    console.log(0 === -0);
 
+    console.log(Object.is(0, -0));//0,-0先转为字符串，再比较
+    console.log(Object.is(NaN, NaN));//0,-0先转为字符串，再比较
 
+    let obj = {};
+    let obj1 = {name: "aaa", age: 12};
+    Object.assign(obj, obj1);
+    console.log(obj);
+
+    let obj2 = {};
+    obj2.__proto__ = obj1;
+    console.log(obj2);
+    console.log(obj2.name);
 </script>
 </body>
 

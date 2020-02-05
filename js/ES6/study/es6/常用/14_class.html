@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>12_class</title>
+    <meta charset="UTF-8">
+    <title>12_class</title>
 </head>
 <body>
 </body>
@@ -15,6 +15,48 @@
 6. 重写从父类中继承的一般方法
 -->
 <script type="text/javascript">
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
+    let person = new Person("aaa", 12);
+    console.log(person);
+
+    //定义一个Dog
+    class Dog {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        showName() {
+            console.log(this.name);
+        }
+    }
+
+    let dog = new Dog("aaa", 12);
+    dog.showName();
+    console.log(dog);
+
+    class StarDog extends Dog {
+        constructor(name, age, price) {
+            super(name, age);
+            this.price = price;
+        }
+
+        showSalary() {
+            console.log(this.price);
+        }
+
+        showName() {
+            console.log(this.name, this.age, this.price);
+        }
+    }
+
+    let starDog = new StarDog("bbb", 5, 10000);
+    console.log(starDog);
+    starDog.showSalary();
+    starDog.showName();
 </script>
 </html>

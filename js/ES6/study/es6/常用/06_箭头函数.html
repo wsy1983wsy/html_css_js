@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>06_箭头函数</title>
+    <meta charset="UTF-8">
+    <title>06_箭头函数</title>
 
 </head>
 <body>
-    <button id="btn1">测试箭头函数this_1</button>
-    <button id="btn2">测试箭头函数this_2</button>
+<button id="btn1">测试箭头函数this_1</button>
+<button id="btn2">测试箭头函数this_2</button>
 
 
 <!--
@@ -28,7 +28,70 @@
         如果没有，则this是window。
 -->
 <script type="text/javascript">
+    // let fun = function () {
+    //     console.log("aa");
+    // }
 
+    let fun = () => console.log("我是箭头函数");
+    fun();
+
+    //形参
+    //1.没有形参
+    let fun1 = () => console.log("我是箭头函数");
+    fun1();
+
+    //2.1个形参,()可以省略
+    // let fun2 = (x) => console.log("我是箭头函数,x:", x);
+    let fun2 = x => console.log("我是箭头函数,x:", x);
+    fun2(111);
+    //3.两个或两个以上的形参时，()不能省略
+    let fun3 = (x, y) => console.log(x, y);
+    fun3(1, 2);
+    //函数体情况
+    //1.函数体只有一条语句或者是表达式的时候，{}可以省略--->自动返回语句执行的结果
+    let fun4 = () => console.log("我是箭头函数");
+    fun4();
+    //{}可以省略--->自动返回语句执行的结果
+    let fun5 = (x, y) => x + y;
+    console.log(fun5(1, 2));
+    let fun6 = (x, y) => {
+        return x + y;
+    };
+    console.log(fun6(1, 2));
+
+    //1.函数体不止一条语句或者是表达式的时候，{}不可以省略
+    let fun7 = (x, y) => {
+        console.log(x, y);
+        return x + y;
+    };
+    console.log(fun7(10, 20));
+
+    //测试箭头函数的this
+    let btn1 = document.getElementById("btn1");
+    btn1.onclick = function () {
+        console.log(this);
+    }
+    let btn2 = document.getElementById("btn2");
+    //箭头函数的外层如果没有函数，则箭头函数的this指向window
+    //如果有函数，则箭头函数的this指向外层函数的this
+    btn2.onclick = () => console.log(this);
+
+    let obj = {
+        name: "箭头函数",
+        getName() {
+            btn2.onclick = () => console.log(this);
+        }
+    }
+    obj.getName();//此时btn.onclick对应的箭头函数的this为getName的this，this即为obj
+
+    let obj2 = {
+        name: "箭头函数",
+        getName: () => {
+            btn2.onclick = () => console.log(this);
+        }
+    }
+    obj2.getName();//此时btn.onclick对应的箭头函数的this为getName的this，
+    // 由于getName本身也是一个箭头函数，在其外层没有函数，则this为window
 </script>
 
 </body>

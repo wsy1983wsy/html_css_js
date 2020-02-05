@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>08_形参默认值</title>
+    <meta charset="UTF-8">
+    <title>08_形参默认值</title>
 </head>
 <body>
 <!--
@@ -13,8 +13,14 @@
     }
 -->
 <script type="text/javascript">
+    //形参的默认值----当不传入参数的时候默认使用形参里的默认值
+    function Point(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
+    }
 
-
+    console.log(new Point(1, 2));
+    console.log(new Point());
 </script>
 
 </body>

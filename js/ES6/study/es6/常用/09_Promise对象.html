@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>11_Promise对象</title>
+    <meta charset="UTF-8">
+    <title>11_Promise对象</title>
 </head>
 <body>
 <!--
@@ -43,8 +43,70 @@
 -->
 
 <script type="text/javascript">
+    //创建promise
+    // let promise = new Promise(((resolve, reject) => {
+    //     //初始化promise状态：pending 初始化
+    //     console.log("1111");
+    //     //执行异步请求，通常是发送ajax请求，开启定时器
+    //     setTimeout(() => {
+    //         //根据异步任务返回结果，修改promise的状态
+    //         //异步任务执行成功，执行resolve
+    //         // resolve("哈哈");//修改promise的状态为fullfilled，成功状态
+    //         //异步任务执行失败，执行reject
+    //         reject("555");//修改promise的状态为rejected 失败状态
+    //     }, 2000);
+    // }));
+    // console.log("2222");
+    //
+    // promise.then((data) => {//成功回调
+    //     console.log(data, "成功了...");
+    // }, (error) => {//失败回调
+    //     console.log(error, "失败了...");
+    // });
 
+    //定义获取新闻的功能函数
+    function getNews(url) {
+        let promise = new Promise((resolve, reject) => {
+            //状态初始化
+            //执行异步任务
+            let xmlHttp = new XMLHttpRequest();
+            //绑定监听 readyState
+            xmlHttp.onreadystatechange = () => {
+                if (xmlHttp.readyState === 4) {
+                    if (xmlHttp.status == 200) {//请求成功
+                        // console.log(xmlHttp.responseText);
+                        //修改状态
+                        resolve(xmlHttp.responseText);//修改promise的状态为成功的状态
+                    } else {
+                        reject("暂时没有新闻内容");
+                    }
+                }
+            };
 
+            //open设置请求的方式以及url
+            xmlHttp.open("GET", url);
+            //发送
+            xmlHttp.send();
+        });
+        return promise;
+    }
+
+    getNews("http://localhost:3000/news")
+        .then((data) => {
+            console.log(data);
+            //发送请求获取评论内容
+            let commentsUrl = JSON.parse(data).commentsUrl;
+            let url = "http://localhost:3000" + commentsUrl;
+            //发送请求
+            return getNews(url)
+        }, (error) => {
+            console.log(error, "失败了");
+        })
+        .then((data) => {
+            console.log(data);
+        }, (error) => {
+            console.log(error, "失败了");
+        });
 </script>
 
 </body>
