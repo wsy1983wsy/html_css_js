@@ -27,14 +27,22 @@
 
 <script type="text/javascript">
     //set 不重复
-    let set = new Set();
+    let set = new Set([1, 2, 4, 6, 2, 1]);
     set.add(1);
     set.add(1);
     set.add(1);
     set.add(1);
     set.add(1);
     console.log(set);
+    console.log(set.has(6));
+    set.clear();
+    console.log(set);
 
+    let map = new Map([["aa", "bb"], [12, 23]]);
+    map.set("ccc", "ddd");
+    console.log(map);
+    map.delete(12);
+    console.log(map);
 </script>
 </body>
 
