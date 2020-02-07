@@ -28,5 +28,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // 3. 注册构建任务
-    grunt.registerTask('default', []);
+    grunt.registerTask('default', ["concat", "uglify"]);
 };
