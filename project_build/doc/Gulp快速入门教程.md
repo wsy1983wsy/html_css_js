@@ -23,11 +23,11 @@
 * 安装gulp:
   * 全局安装gulp
     ```
-    npm install gulp -g
+    cnpm install gulp -g
     ```
   * 局部安装gulp
     ```
-    npm install gulp --save-dev
+    cnpm install gulp --save-dev
     ```
   * 配置编码: gulpfile.js
     ```
