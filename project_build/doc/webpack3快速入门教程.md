@@ -20,8 +20,8 @@
 	
 ###2、学习文档 : 
   * webpack官网: http://webpack.github.io/
-  * webpack3文档(英文): https://webpack.js.org/
-  * webpack3文档(中文): https://doc.webpack-china.org/
+  * webpack4文档(英文): https://webpack.js.org/
+  * webpack4文档(中文): https://doc.webpack-china.org/
 ###3、开启项目
   * 初始化项目：
 	  * 生成package.json文件
@@ -33,15 +33,15 @@
 	  } 
 	  ```
   * 安装webpack
-	- npm install webpack -g  //全局安装
-    - npm install webpack --save-dev  //局部安装
+	- cnpm install webpack -g  //全局安装
+    - cnpm install webpack --save-dev  //局部安装
 ###4、编译打包应用
   * 创建入口src/js/ : entry.js
 	- document.write("entry.js is work");
   * 创建主页面: dist/index.html
     - <script type="text/javascript" src="bundle.js"></script>
   * 编译js
-    - webpack src/js/entry.js dist/bundle.js  
+    - webpack src/js/entry.js -o dist/bundle.js  
   * 查看页面效果
 ###5、添加js/json文件
 	* 创建第二个js: src/js/math.js
@@ -189,7 +189,7 @@
     
   * 下载
     ```
-    npm install --save-dev  html-webpack-plugin clean-webpack-plugin
+    cnpm install --save-dev  html-webpack-plugin clean-webpack-plugin
     ```
   * webpack配置
 
