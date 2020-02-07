@@ -5,13 +5,9 @@ var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var less = require("gulp-less");
 var cssClean = require("gulp-clean-css");
-var htmlmin = require('gulp-htmlmin');
-var livereload = require('gulp-livereload');
-
-//定义默认任务
-// gulp.task("任务名", function() {
-//     // 将你的任务的任务代码放在这
-// });
+var htmlmin = require("gulp-htmlmin");
+var livereload = require("gulp-livereload");
+var connnect = require("gulp-connect");
 
 //注册合并压缩js的任务
 gulp.task("js", function () {
@@ -21,7 +17,8 @@ gulp.task("js", function () {
         .pipe(rename({suffix: ".min"})) //重命名
         .pipe(uglify())    //压缩文件
         .pipe(gulp.dest("dist/js"))
-        .pipe(livereload());
+        .pipe(livereload())
+        .pipe(connnect.reload());
 });
 
 //注册转换less的任务
@@ -29,7 +26,8 @@ gulp.task("less", function () {
     return gulp.src("src/less/*.less")
         .pipe(less())
         .pipe(gulp.dest("src/css/"))
-        .pipe(livereload());
+        .pipe(livereload())
+        .pipe(connnect.reload());
 });
 //注册压缩css，依赖于less
 gulp.task("css", ["less"], function () {
@@ -39,7 +37,8 @@ gulp.task("css", ["less"], function () {
         .pipe(rename({suffix: ".min"}))
         .pipe(cssClean({compatibility: "ie8"}))
         .pipe(gulp.dest("dist/css/"))
-        .pipe(livereload());
+        .pipe(livereload())
+        .pipe(connnect.reload());
 });
 
 //注册压缩html
@@ -47,15 +46,28 @@ gulp.task("html", function () {
     return gulp.src("index.html")
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest("dist"))
-        .pipe(livereload());
+        .pipe(livereload())
+        .pipe(connnect.reload());
 });
-//注册监视任务
+//注册监视任务（半自动）
 gulp.task("watch", ["default"], function () {
     livereload.listen();
     //确认监听的目标以及绑定相应的任务
     gulp.watch("src/js/*.js", ["js"]);
     gulp.watch(["src/css/*.css", "src/less/*.less"], ["css"]);
 
+});
+
+//注册监视任务（全自动）
+gulp.task("server", ["default"], function () {
+    connnect.server({
+        root: "dist",
+        livereload: true,
+        port: 5000
+    });
+    //确认监听的目标以及绑定相应的任务
+    gulp.watch("src/js/*.js", ["js"]);
+    gulp.watch(["src/css/*.css", "src/less/*.less"], ["css"]);
 });
 
 gulp.task("default", ["js", "css", "html"]);//异步执行

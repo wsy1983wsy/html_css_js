@@ -216,7 +216,7 @@
     * 热加载(实时加载)
         * 下载插件：gulp-connect
         ```
-        1、 npm install gulp-connect --save-dev
+        1、 cnpm install gulp-connect --save-dev
         2、 注册 热加载的任务 server，注意依赖build任务 
         3、注册热加载的任务
             //配置加载的选项
