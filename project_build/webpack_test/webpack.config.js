@@ -5,5 +5,27 @@ module.exports = {
     output: {//输出配置
         filename: 'bundle.js',//输出的文件名
         path: path.resolve(__dirname, 'dist/js/')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            }
+        ]
     }
 };

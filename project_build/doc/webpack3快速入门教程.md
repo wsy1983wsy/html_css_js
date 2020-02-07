@@ -101,8 +101,8 @@
 ###7、打包css和图片文件
    * 安装样式的loader
     ```
-    npm install css-loader style-loader --save-dev
-    npm install file-loader url-loader --save-dev
+    cnpm install css-loader style-loader --save-dev
+    cnpm install file-loader url-loader --save-dev
 	补充：url-loader是对象file-loader的上层封装，使用时需配合file-loader使用。
     ```
   * 配置loader
