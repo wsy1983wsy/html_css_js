@@ -221,7 +221,7 @@
 * 使用cssmin插件
   * 安装:
     ```
-    npm install grunt-contrib-cssmin --save-dev
+    cnpm install grunt-contrib-cssmin --save-dev
     ```
   * 编码: 
     * test1.css
@@ -275,7 +275,7 @@
       grunt    //在build/css/下生成output.min.css
       ```
 * 使用watch插件（真正实现自动化） 
-  * 命令: npm install grunt-contrib-watch --save-dev
+  * 命令: cnpm install grunt-contrib-watch --save-dev
   * 配置 : Gruntfile.js
   
     * 配置任务:
