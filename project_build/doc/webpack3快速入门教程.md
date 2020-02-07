@@ -72,7 +72,7 @@
 	    ```
     * 编译js:
 	    ```
-	    webpack src/js/entry.js dist/bundle.js
+	    webpack src/js/entry.js -o dist/bundle.js
 	    ```
     * 查看页面效果
 ###6、使用webpack配置文件
