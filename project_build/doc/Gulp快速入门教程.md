@@ -195,7 +195,7 @@
   * 自动编译
     * 下载插件
       ```
-      npm install gulp-livereload --save-dev
+      cnpm install gulp-livereload --save-dev
       ```
     * 配置编码:
       ```
