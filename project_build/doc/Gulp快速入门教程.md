@@ -86,7 +86,7 @@
         ```
     * 下载插件:
       ```
-      npm install gulp-concat gulp-uglify gulp-rename --save-dev
+      cnpm install gulp-concat gulp-uglify gulp-rename --save-dev
       ```
     * 配置编码
       ```
