@@ -13,8 +13,8 @@ var cssClean = require("gulp-clean-css");
 // });
 
 //注册合并压缩js的任务
-gulp.task("minifyjs", function () {
-    return gulp.src("src/js/*.js")  //找到目标原文件，将数据读取到gulp的内存中
+gulp.task("js", function () {
+    gulp.src("src/js/*.js")  //找到目标原文件，将数据读取到gulp的内存中
         .pipe(concat("built.js")) //合并到临时文件
         .pipe(gulp.dest("dist/js")) //生成到目标文件夹
         .pipe(rename({suffix: ".min"})) //重命名
@@ -24,9 +24,18 @@ gulp.task("minifyjs", function () {
 
 //注册转换less的任务
 gulp.task("less", function () {
-    return gulp.src("src/less/*.less")
+    gulp.src("src/less/*.less")
         .pipe(less())
+        .pipe(gulp.dest("src/css/"));
+});
+
+gulp.task("css", function () {
+    gulp.src("src/css/*.css")
+        .pipe(concat("build.css"))
+        .pipe(gulp.dest("dist/css/"))
+        .pipe(rename({suffix: ".min"}))
+        .pipe(cssClean({compatibility: "ie8"}))
         .pipe(gulp.dest("dist/css/"));
 });
 
-gulp.task("default", []);//异步执行
+gulp.task("default", ["js", "less", "css"]);//异步执行
