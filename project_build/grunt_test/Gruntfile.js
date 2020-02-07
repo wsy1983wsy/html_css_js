@@ -23,10 +23,17 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc' //指定配置文件
+            },
+            build: ['Gruntfile.js', 'src/js/*.js'] //指定检查的文件
+        }
     });
     // 2. 加载插件任务
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    // 3. 注册构建任务
-    grunt.registerTask('default', ["concat", "uglify"]);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    // 3. 注册构建任务,任务列表按照顺序执行
+    grunt.registerTask('default', ["concat", "uglify", "jshint"]);
 };

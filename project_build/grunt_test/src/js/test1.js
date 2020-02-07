@@ -3,5 +3,5 @@
         return num1 + num2;
     }
 
-     console.log(foo(10, 20));
+     // console.log(foo(10, 20));
 })();
