@@ -1,0 +1,10 @@
+{
+  "name": "comm_js_broeserify",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browserify": "^16.5.0"
+  },
+  "dependencies": {
+    "uniq": "^1.0.1"
+  }
+}
