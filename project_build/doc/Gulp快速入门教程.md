@@ -236,7 +236,7 @@
         * 打包加载gulp插件
         * 前提：将插件下载好。
         * 下载打包插件： gulp-load-plugins
-        * npm install gulp-load-plugins --save-dev
+        * cnpm install gulp-load-plugins --save-dev
         * 引入： var $ = require('gulp-load-plugins')();！！！引入的插件是个方法，必须记住调用。
         * 神来之笔：其他的插件不用再引入了
         * 使用方法：
