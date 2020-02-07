@@ -7,6 +7,10 @@ module.exports = {
         publicPath: "js/",    //设置为index.html提供资源服务的时候具有强制性，不推荐使用
         path: path.resolve(__dirname, "dist/js/")
     },
+    devtool: 'inline-source-map',//生成sourcemap
+    devServer: {
+        contentBase: './dist'//webpack-dev-server默认服务于根路径下index.html
+    },
     module: {
         rules: [
             {

@@ -168,12 +168,12 @@
 	  * 大图无法打包到entry.js文件中，index.html不在生成资源目录下。
 	  * 页面加载图片会在所在目录位置查找，导致页面加载图片时候大图路径无法找到
 	  * 解决办法：
-	  	* 使用publicPath : 'dist/js/' //设置为index.html提供资源的路径,设置完后找所有的资源都会去当前目录下找。
+	  	* 使用publicPath : 'js/' //设置为index.html提供资源的路径,设置完后找所有的资源都会去当前目录下找。
 	  	* 将index.html放在dist/js/也可以解决。
 ###8、自动编译打包
     * 利用webpack开发服务器工具: webpack-dev-server
     * 下载
-        - npm install --save-dev webpack-dev-server
+        - cnpm install --save-dev webpack-dev-server
     * webpack配置
 	      devServer: {
 	        contentBase: './dist'
