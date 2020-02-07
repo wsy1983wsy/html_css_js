@@ -136,7 +136,7 @@
         ```
     * 下载插件:
       ```
-      npm install gulp-less gulp-clean-css --save-dev 
+      cnpm install gulp-less gulp-clean-css --save-dev 
       ```
     * 配置编码
       ```
