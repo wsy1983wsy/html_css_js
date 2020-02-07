@@ -173,7 +173,7 @@
   * 处理html
       * 下载插件:
         ```
-        npm install gulp-htmlmin --save-dev
+        cnpm install gulp-htmlmin --save-dev
         ```
       * 配置编码
         ```
