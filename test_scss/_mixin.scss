@@ -1,0 +1,39 @@
+@mixin rouned-corners {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@mixin no-bullets {
+    list-style: none;
+
+    li {
+        list-style-image: none;
+        list-style-type: none;
+        margin-left: 0px;
+    }
+}
+
+@mixin link-color($normal, $hover, $visited) {
+    color: $normal;
+
+    &:hover {
+        color: $hover
+    }
+
+    &:visited {
+        color: $visited
+    }
+}
+
+@mixin default-color($normal, $hover:red, $visited:green) {
+    color: $normal;
+
+    &:hover {
+        color: $hover
+    }
+
+    &:visited {
+        color: $visited
+    }
+}

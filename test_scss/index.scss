@@ -1,0 +1,131 @@
+@import "_color";
+
+$bgColor:red;
+
+/*引用变量*/
+body {
+    background-color: $bodyBgColor;
+}
+
+.nav {
+    height: $navHeight;
+}
+
+/*
+嵌套
+*/
+div {
+    h1 {
+        background-color: blue;
+    }
+}
+
+/*引用父类&*/
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: skyblue;
+    }
+}
+
+$nav-color:#f90;
+
+nav {
+    $width: 100px;
+    width: $width;
+    color: $nav-color;
+}
+
+/*
+    变量引用变量
+*/
+$highlight-color:$nav-color;
+$highlight-border:1px solid $highlight-color;
+
+.selected {
+    border: $highlight-border;
+}
+
+#content {
+    background-color: #f5f5f5;
+
+    &:hover {
+        background-color: yellowgreen;
+    }
+
+    article {
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1.4em;
+        }
+    }
+
+    aside {
+        background-color: #eee;
+    }
+}
+
+article a {
+    color: blue;
+
+    &:hover {
+        color: red
+    }
+
+    ;
+}
+
+.container {
+
+    h1,
+    h2,
+    h3 {
+        margin-bottom: .8em;
+    }
+}
+
+nav,
+aside {
+    a {
+        color: blue;
+    }
+}
+
+article {
+    ~article {
+        border-top: 1px solid #ccc;
+    }
+
+    >section {
+        background: #eee;
+    }
+
+    dl> {
+        dt {
+            color: #333;
+        }
+
+        dd {
+            color: #555;
+        }
+    }
+
+    nav+& {
+        margin-top: 0;
+    }
+}
+
+
+.error {
+    border: 1px #f00 solid;
+    background-color: #fdd;
+}
+
+.specialerror {
+    @extend .error;
+    border-width: 3px;
+}

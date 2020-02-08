@@ -1,0 +1,28 @@
+@import "_mixin";
+
+.blue-theme {
+    @import "blue-theme";
+}
+
+.notice {
+    background-color: green;
+    border: 2px solid #00aa00;
+    @include rouned-corners;
+}
+
+ul.plain {
+    color: #444;
+    @include no-bullets;
+}
+
+a {
+    @include link-color(blue, red, green);
+}
+
+.commonDiv {
+    @include link-color($normal:blue, $visited:red, $hover:yellow);
+}
+
+.testDefaultColor {
+    @include default-color($normal:yellow, $hover:skyblue);
+}

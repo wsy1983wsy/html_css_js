@@ -1,0 +1,208 @@
+/*
+嵌套
+*/
+
+#main p {
+    color: #00ff00;
+    width: 97%;
+
+    .redbox {
+        /* #main p .redbox */
+        background-color: #f00;
+        color: #000;
+    }
+}
+
+#main {
+    width: 97%;
+
+    p,
+    div {
+        /*#main p,#main div*/
+        font-size: 2em;
+
+        a {
+            /*#main p a,#main div a*/
+            font-weight: bold;
+        }
+    }
+
+    pre {
+        /*#main pre*/
+        font-size: 3em;
+    }
+}
+
+/*
+父选择器
+编译后的 CSS 文件中 & 将被替换成嵌套外层的父选择器，如果含有多层嵌套，最外层的父选择器会一层一层向下传递
+*/
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        /*a:hover*/
+        text-decoration: underline;
+    }
+
+    body.firefox & {
+        /*body.firefox a*/
+        font-weight: normal;
+    }
+}
+
+#main {
+    color: black;
+
+    a {
+        /*#main a*/
+        font-weight: bold;
+
+        &:hover {
+            /*#main a:hover*/
+            color: red;
+        }
+    }
+}
+
+#main {
+    color: black;
+
+    &-siderbar {
+        /*& 必须作为选择器的第一个字符，其后可以跟随后缀生成复合的选择器*/
+        border: 1px solid red;
+    }
+}
+
+.funky {
+    font: {
+        family: fantasy;
+        size: 30em;
+        weight: bold;
+    }
+}
+
+.luky {
+    font:20px/24px {
+        family: fantasy;
+        weight: bold;
+    }
+}
+
+$width:5em;
+
+#main {
+    width: $width;
+}
+
+#main {
+    /*将这里定义的$width转为全局的，下面使用的$width使用这里定义的值*/
+    $width: 10em !global;
+    width: $width;
+}
+
+#sidebar {
+    width: $width;
+}
+
+
+/*
+数据类型
+*/
+
+/*
+字符串
+*/
+@mixin firefox-message($selector) {
+    body.firefox #{$selector}:before {
+        content: "Hi Firefox users!";
+    }
+}
+
+@include firefox-message((".header"));
+
+p {
+    width: 10px+20px;
+}
+
+p {
+    font: 10px/8px;
+    $width: 1000px;
+    width: $width/2;
+    height: (500px/2);
+    margin-left: 5px+8px/2px;
+}
+
+/*
+插值语句"#\{\}",可以在选择器或属性名中使用变量
+*/
+
+$name:foo;
+$attr:border;
+
+p.#{$name} {
+    #{$attr}-color: blue;
+}
+
+.error {
+    border: 1px #f00;
+    background-color: #fdd;
+}
+
+.error.redbox {
+    color: blue;
+}
+
+.seriousError {
+    @extend .error;
+    border-width: 3px;
+}
+
+@mixin button {
+    font-size: 1em;
+    padding: 0.5em 1.0em;
+    text-decoration: none;
+    color: #fff;
+    @content;
+}
+
+.button-green {
+    @include button {
+        /*background-color: green; 替换@content*/
+        background-color: green;
+    }
+}
+
+/*
+必须有一个选择器
+*/
+@mixin button1 {
+    @content;
+}
+
+.button-red {
+    @include button1 {
+        /*background-color: green; 替换@content*/
+        font-size: 1em;
+        padding: 0.5em 1.0em;
+        text-decoration: none;
+        color: #fff;
+        background-color: red;
+    }
+}
+
+$color:green;
+
+@mixin button2($color:#fff) {
+    color: $color;
+    @content;
+    border: 1px solid $color;
+}
+
+.button-green {
+    @include button2 {
+        background: $color;
+    }
+}

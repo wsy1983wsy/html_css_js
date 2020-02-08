@@ -1,0 +1,46 @@
+/*
+Error: Invalid CSS after "插值语句 #{": expected expression (e.g. 1px, bold), was "},可以在选择器或属性名中使用变量"
+        on line 139 of api.scss
+
+134:     height: (500px/2);
+135:     margin-left: 5px+8px/2px;
+136: }
+137: 
+138: /*
+139: 插值语句 #{},可以在选择器或属性名中使用变量
+140: *\/
+141: 
+142: $name:foo;
+143: $attr:border;
+144: 
+
+Backtrace:
+api.scss:139
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/script/parser.rb:855:in `assert_expr'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/script/parser.rb:51:in `parse_interpolated'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:1228:in `block in parse_interp'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/shared.rb:18:in `handle_interpolation'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:1215:in `parse_interp'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:180:in `process_comment'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:143:in `s'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `block in stylesheet'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:699:in `block_contents'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/Library/Ruby/Gems/2.6.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"插值语句 #{\": expected expression (e.g. 1px, bold), was \"},可以在选择器或属性名中使用变量\"\A         on line 139 of api.scss\A \A 134:     height: (500px/2);\A 135:     margin-left: 5px+8px/2px;\A 136: }\A 137: \A 138: /*\A 139: 插值语句 #{},可以在选择器或属性名中使用变量\A 140: */\A 141: \A 142: $name:foo;\A 143: $attr:border;\A 144: "; }

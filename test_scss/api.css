@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/*
+嵌套
+*/
+#main p {
+  color: #00ff00;
+  width: 97%;
+}
+
+#main p .redbox {
+  /* #main p .redbox */
+  background-color: #f00;
+  color: #000;
+}
+
+#main {
+  width: 97%;
+}
+
+#main p,
+#main div {
+  /*#main p,#main div*/
+  font-size: 2em;
+}
+
+#main p a,
+#main div a {
+  /*#main p a,#main div a*/
+  font-weight: bold;
+}
+
+#main pre {
+  /*#main pre*/
+  font-size: 3em;
+}
+
+/*
+父选择器
+编译后的 CSS 文件中 & 将被替换成嵌套外层的父选择器，如果含有多层嵌套，最外层的父选择器会一层一层向下传递
+*/
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  /*a:hover*/
+  text-decoration: underline;
+}
+
+body.firefox a {
+  /*body.firefox a*/
+  font-weight: normal;
+}
+
+#main {
+  color: black;
+}
+
+#main a {
+  /*#main a*/
+  font-weight: bold;
+}
+
+#main a:hover {
+  /*#main a:hover*/
+  color: red;
+}
+
+#main {
+  color: black;
+}
+
+#main-siderbar {
+  /*& 必须作为选择器的第一个字符，其后可以跟随后缀生成复合的选择器*/
+  border: 1px solid red;
+}
+
+.funky {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold;
+}
+
+.luky {
+  font: 20px/24px;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+#main {
+  width: 5em;
+}
+
+#main {
+  /*将这里定义的$width转为全局的，下面使用的$width使用这里定义的值*/
+  width: 10em;
+}
+
+#sidebar {
+  width: 10em;
+}
+
+/*
+数据类型
+*/
+/*
+字符串
+*/
+body.firefox .header:before {
+  content: "Hi Firefox users!";
+}
+
+p {
+  width: 30px;
+}
+
+p {
+  font: 10px/8px;
+  width: 500px;
+  height: 250px;
+  margin-left: 9px;
+}
+
+/*
+插值语句"#\{\}",可以在选择器或属性名中使用变量
+*/
+p.foo {
+  border-color: blue;
+}
+
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+
+.error.redbox, .redbox.seriousError {
+  color: blue;
+}
+
+.seriousError {
+  border-width: 3px;
+}
+
+.button-green {
+  font-size: 1em;
+  padding: 0.5em 1.0em;
+  text-decoration: none;
+  color: #fff;
+  /*background-color: green; 替换@content*/
+  background-color: green;
+}
+
+/*
+必须有一个选择器
+*/
+.button-red {
+  /*background-color: green; 替换@content*/
+  font-size: 1em;
+  padding: 0.5em 1.0em;
+  text-decoration: none;
+  color: #fff;
+  background-color: red;
+}
+
+.button-green {
+  color: #fff;
+  background: green;
+  border: 1px solid #fff;
+}
+/*# sourceMappingURL=api.css.map */

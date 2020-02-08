@@ -1,0 +1,58 @@
+.blue-theme aside {
+  background: blue;
+  color: white;
+}
+
+.notice {
+  background-color: green;
+  border: 2px solid #00aa00;
+  border-radius: 5px;
+}
+
+ul.plain {
+  color: #444;
+  list-style: none;
+}
+
+ul.plain li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+.commonDiv {
+  color: blue;
+}
+
+.commonDiv:hover {
+  color: yellow;
+}
+
+.commonDiv:visited {
+  color: red;
+}
+
+.testDefaultColor {
+  color: yellow;
+}
+
+.testDefaultColor:hover {
+  color: skyblue;
+}
+
+.testDefaultColor:visited {
+  color: green;
+}
+/*# sourceMappingURL=test.css.map */
