@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>02_模板语法</title>
+  <meta charset="UTF-8">
+  <title>02_模板语法</title>
 </head>
+
 <body>
-<!--
+  <!--
 1. 模板的理解:
   动态的html页面
   包含了一些JS语法代码
@@ -29,12 +31,14 @@
     @click='xxx'
 -->
 
-<div id="app">
+  <div id="app">
     <h2>1. 双大括号表达式{{}}</h2>
     <p>{{msg}}</p>
     <p>{{msg.toUpperCase()}}</p>
-    <p v-text="msg"></p><!--textContent-->
-    <p v-html="atag"></p><!--innerHtml-->
+    <p v-text="msg"></p>
+    <!--textContent-->
+    <p v-html="atag"></p>
+    <!--innerHtml-->
     <h2>2. 指令一: 强制数据绑定 v-bind,:src指令</h2>
     <img src="imgUrl">
     <img v-bind:src="imgUrl">
@@ -43,25 +47,26 @@
     <h2>3. 指令二: 绑定事件监听v-on:click,@click</h2>
     <button v-on:click="test">test1</button>
     <button @click="test('1231')">test2</button>
-  <button @click="test(msg)">test3</button>
-</div>
+    <button @click="test(msg)">test3</button>
+  </div>
 
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
     new Vue({
-        el: '#app',//指定要绑定的标签
-        data: {
-            msg: "I will Back",
-            atag: "<a href='http://www.baidu.com'>BaiDu</a>",
-            imgUrl: "https://cn.vuejs.org/images/logo.png",
-        },
-        methods: {
-            test(content) {
-                alert(content);
-            }
+      el: '#app',//指定要绑定的标签
+      data: {
+        msg: "I will Back",
+        atag: "<a href='http://www.baidu.com'>BaiDu</a>",
+        imgUrl: "https://cn.vuejs.org/images/logo.png",
+      },
+      methods: {
+        test(content) {
+          alert(content);
         }
+      }
     })
-</script>
+  </script>
 </body>
+
 </html>
