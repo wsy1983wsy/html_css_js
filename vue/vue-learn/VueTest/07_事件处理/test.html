@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>07_事件处理</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
 </head>
+
 <body>
-<!--
+  <!--
 1. 绑定监听:
   v-on:xxx="fun"
   @xxx="fun"
@@ -20,60 +35,62 @@
   .enter : 操作的是enter键
 -->
 
-<div id="example">
+  <div id="example">
 
-  <h2>1. 绑定监听</h2>
-  <button @click="test1">test1</button>
-  <button @click="test2('abc')">test2</button>
-  <button @click="test3('abcd', $event)">test3</button>
+    <h2>1. 绑定监听</h2>
+    <button v-on:click="test1">test1</button>
+    <button @click="test2('msg')">test2</button>
+    <button @click="test3">test3</button>
+    <button @click="test4(123,$event)">test4</button>
 
-  <h2>2. 事件修饰符</h2>
-  <a href="http://www.baidu.com" @click.prevent="test4">百度一下</a>
-  <div style="width: 200px;height: 200px;background: red" @click="test5">
-    <div style="width: 100px;height: 100px;background: blue" @click.stop="test6"></div>
+    <h2>2. 事件修饰符</h2>
+    <div class="box1" @click="test5">
+      <div class="box2" @click.stop="test6"></div>
+    </div>
+    <a href="http://www.baidu.com" @click.prevent="test7">百度</a>
+    <h2>3. 按键修饰符</h2>
+    <input type="text" @keyup.13="test8">
+    <input type="text" @keyup.enter="test8">
   </div>
 
-  <h2>3. 按键修饰符</h2>
-  <input type="text" @keyup.13="test7">
-  <input type="text" @keyup.enter="test7">
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#example',
+      data: {
 
-</div>
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-  new Vue({
-    el: '#example',
-    data: {
-
-    },
-    methods: {
-      test1(event) {
-        alert(event.target.innerHTML)
       },
-      test2 (msg) {
-        alert(msg)
-      },
-      test3 (msg, event) {
-        alert(msg+'---'+event.target.textContent)
-      },
-
-      test4 () {
-        alert('点击了链接')
-      },
-
-      test5 () {
-        alert('out')
-      },
-      test6 () {
-        alert('inner')
-      },
-
-      test7 (event) {
-        console.log(event.keyCode)
-        alert(event.target.value)
+      methods: {
+        test1() {
+          alert("test1");
+        },
+        test2(msg) {
+          alert(msg);
+        },
+        test3() {
+          alert(event.target.innerHTML);
+        },
+        test4(number, event) {
+          alert(number + "------" + event.target.innerHTML);
+        },
+        test5() {
+          alert("outer");
+        },
+        test6() {
+          // event.stopPropagation();
+          alert("inner");
+        },
+        test7() {
+          alert("test7");
+        },
+        test8(event) {
+          // if (event.keyCode === 13) {
+            alert(event.target.value);
+          // }
+        }
       }
-    }
-  })
-</script>
+    });
+  </script>
 </body>
+
 </html>
