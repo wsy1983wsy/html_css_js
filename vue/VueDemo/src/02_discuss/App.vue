@@ -4,14 +4,14 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <h1>请发表对React的评论</h1>
+            <h1>请发表对Vue的评论</h1>
           </div>
         </div>
       </div>
     </header>
     <div class="container">
-      <Add/>
-      <List/>
+      <Add :addComment="addComment"/>
+      <List :comments="comments" :deleteComment="deleteComment"/>
     </div>
   </div>
 </template>
@@ -22,9 +22,37 @@ import List from './components/List'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      comments: [
+        // 数据在哪个组件， 更新数据的行为（方法）就应该在哪个组件
+        {
+          name: 'BOB',
+          content: 'Vue还不错'
+        },
+        {
+          name: 'cat',
+          content: 'Vue So Easy'
+        },
+        {
+          name: 'BZ',
+          content: 'Vue So So'
+        },
+      ]
+    }
+  },
   components: {
     Add,
     List
+  },
+  methods: {
+    addComment (comment) {
+      this.comments.unshift(comment);
+    },
+    // 删除指定下标的评论
+    deleteComment (index) {
+      this.comments.splice(index, 1);
+    }
   }
 }
 </script>
