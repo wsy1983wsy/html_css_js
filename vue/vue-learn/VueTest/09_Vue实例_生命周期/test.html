@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>09_Vue实例_生命周期</title>
 </head>
+
 <body>
-<!--
+  <!--
 1. vue对象的生命周期
   1). 初始化显示
     * beforeCreate()
     * created()
     * beforeMount()
     * mounted()
-  2). 更新状态
+  2). 更新状态,this.xxx = value
     * beforeUpdate()
     * updated()
   3). 销毁vue实例: vm.$destory()
@@ -23,41 +25,59 @@
   beforeDestory(): 做收尾工作, 如: 清除定时器
 -->
 
-<div id="test">
-  <button @click="destroyVue">destory vue</button>
-  <p v-if="isShow">尚硅谷IT教育</p>
-</div>
+  <div id="test">
+    <button @click="destroyVue">destory vue</button>
+    <p v-if="isShow">尚硅谷IT教育</p>
+  </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-  new Vue({
-    el: '#test',
-    data: {
-      isShow: true
-    },
-
-    mounted () {
-      // 执行异步任务
-      this.intervalId = setInterval(() => {
-        console.log('-----')
-        this.isShow = !this.isShow
-      }, 1000)
-    },
-
-    beforeDestroy() {
-      console.log('beforeDestroy()')
-      // 执行收尾的工作
-      clearInterval(this.intervalId)
-    },
-
-    methods: {
-      destroyVue () {
-        this.$destroy()
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#test',
+      data: {
+        isShow: true,
+        intervalId: ""
+      },
+      //初始阶段
+      beforeCreate() {
+        console.log("before create");
+      },
+      created() {
+        console.log(" create");
+      },
+      beforeMount() {
+        console.log(" beforeMount");
+      },
+      mounted() {
+        console.log(" mounted");
+        this.intervalId = setInterval(() => {
+          console.log("interval");
+          this.isShow = !this.isShow;
+        }, 1000);
+      },
+      //更新阶段
+      beforeUpdate() {
+        console.log(" beforeUpdate");
+      },
+      updated() {
+        console.log(" updated");
+      },
+      //死亡阶段
+      beforeDestroy() {
+        console.log(" beforeDestroy");
+        clearInterval(this.intervalId);
+      },
+      destroyed() {
+        console.log(" destroyed");
+      },
+      methods: {
+        destroyVue() {
+          //干掉vm
+          this.$destroy();
+        }
       }
-    }
-  })
-
-
-</script>
+    });
+  </script>
 </body>
+
 </html>
