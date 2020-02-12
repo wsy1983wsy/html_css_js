@@ -1,7 +1,7 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-      <ToDoHeader/>
+      <ToDoHeader :addTodo="addTodo"/>
       <ToDoList :todos="todos"/>
       <ToDoFooter/>
     </div>
@@ -27,6 +27,11 @@ export default {
         {title: '睡觉', complete: true},
         {title: 'coding', complete: false},
       ]
+    }
+  },
+  methods: {
+    addTodo (todo) {
+      this.todos.push(todo)
     }
   }
 }
