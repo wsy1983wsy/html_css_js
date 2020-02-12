@@ -2,7 +2,7 @@
   <div class="todo-container">
     <div class="todo-wrap">
       <ToDoHeader :addTodo="addTodo"/>
-      <ToDoList :todos="todos"/>
+      <ToDoList :todos="todos" :deleteTodo="deleteTodo"/>
       <ToDoFooter/>
     </div>
   </div>
@@ -32,6 +32,10 @@ export default {
   methods: {
     addTodo (todo) {
       this.todos.push(todo)
+    },
+    deleteTodo (index) {
+      console.log('deleteTodo', index)
+      this.todos.splice(index, 1)
     }
   }
 }
