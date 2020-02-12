@@ -2,7 +2,7 @@
   <div class="todo-container">
     <div class="todo-wrap">
       <ToDoHeader/>
-      <ToDoList/>
+      <ToDoList :todos="todos"/>
       <ToDoFooter/>
     </div>
   </div>
@@ -19,6 +19,15 @@ export default {
     ToDoHeader,
     ToDoList,
     ToDoFooter
+  },
+  data () {
+    return {
+      todos: [
+        {title: '吃饭', complete: false},
+        {title: '睡觉', complete: true},
+        {title: 'coding', complete: false},
+      ]
+    }
   }
 }
 </script>
