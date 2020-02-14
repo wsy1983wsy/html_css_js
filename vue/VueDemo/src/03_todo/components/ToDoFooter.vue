@@ -27,7 +27,7 @@ export default {
     },
     isAllCheck: {
       get () {
-        return this.completeCount == this.todos.length
+        return this.completeCount === this.todos.length && this.todos.length > 0
       },
       set (value) {
         if (value) {
