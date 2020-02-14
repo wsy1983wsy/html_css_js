@@ -6,6 +6,11 @@
       <ToDoHeader ref="header"/>
       <ToDoList :todos="todos"/>
       <ToDoFooter :todos="todos" :deleteCompleteTodos="deleteCompleteTodos" :selectAll="selectAll"/>
+      <to-do-footer>
+        <input type="checkbox" v-model="isAllCheck" slot="checkAll"/>
+        <span slot="count">已完成{{completeCount}}/ 全部{{todos.length}}</span>
+        <button class="btn btn-danger" v-show="completeCount > 0" @click="deleteCompleteTodos" slot="delete">清除已完成任务</button>
+      </to-do-footer>
     </div>
   </div>
 </template>
@@ -68,6 +73,24 @@ export default {
       handler: function (value) {
         // 将todos最新值的json数据，保存到localstorage
         window.localStorage.setItem('todos_key', JSON.stringify(value))
+      }
+    }
+  },
+  computed: {
+    completeCount () {
+      let compeleted = this.todos.filter(todo => todo.complete)
+      return compeleted.length
+    },
+    isAllCheck: {
+      get () {
+        return this.completeCount === this.todos.length && this.todos.length > 0
+      },
+      set (value) {
+        if (value) {
+          this.selectAll(true)
+        } else {
+          this.selectAll(false)
+        }
       }
     }
   }
