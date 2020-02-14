@@ -9,7 +9,8 @@
       <to-do-footer>
         <input type="checkbox" v-model="isAllCheck" slot="checkAll"/>
         <span slot="count">已完成{{completeCount}}/ 全部{{todos.length}}</span>
-        <button class="btn btn-danger" v-show="completeCount > 0" @click="deleteCompleteTodos" slot="delete">清除已完成任务</button>
+        <button class="btn btn-danger" v-show="completeCount > 0" @click="deleteCompleteTodos" slot="delete">清除已完成任务
+        </button>
       </to-do-footer>
     </div>
   </div>
@@ -23,6 +24,7 @@ import PubSub from 'pubsub-js'
 import ToDoHeader from './components/ToDoHeader'
 import ToDoList from './components/ToDoList'
 import ToDoFooter from './components/ToDoFooter'
+import StorageUtil from './util/StorageUtil'
 
 export default {
   name: 'App',
@@ -33,7 +35,8 @@ export default {
   },
   data () {
     return {
-      todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+      // todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+      todos:StorageUtil.readTodos()
       //   [
       //   {title: '吃饭', complete: false},
       //   {title: '睡觉', complete: true},
@@ -72,7 +75,8 @@ export default {
       deep: true, // 深度监视
       handler: function (value) {
         // 将todos最新值的json数据，保存到localstorage
-        window.localStorage.setItem('todos_key', JSON.stringify(value))
+        // window.localStorage.setItem('todos_key', JSON.stringify(value))
+        StorageUtil.saveTodos(value)
       }
     }
   },
