@@ -22,11 +22,12 @@ export default {
   },
   data () {
     return {
-      todos: [
-        {title: '吃饭', complete: false},
-        {title: '睡觉', complete: true},
-        {title: 'coding', complete: false},
-      ]
+      todos: JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+      //   [
+      //   {title: '吃饭', complete: false},
+      //   {title: '睡觉', complete: true},
+      //   {title: 'coding', complete: false},
+      // ]
     }
   },
   methods: {
@@ -46,7 +47,17 @@ export default {
     selectAll (select) {
       this.todos.forEach(todo => todo.complete = select)
     }
+  },
+  watch: {
+    todos: {
+      deep: true, // 深度监视
+      handler: function (value) {
+        // 将todos最新值的json数据，保存到localstorage
+        window.localStorage.setItem('todos_key', JSON.stringify(value))
+      }
+    }
   }
+
 }
 </script>
 
