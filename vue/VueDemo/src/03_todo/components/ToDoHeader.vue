@@ -7,12 +7,7 @@
 <script>
 export default {
   name: 'ToDoHeader',
-  props: {
-    addTodo: {
-      type: Function,
-      required: true
-    }
-  },
+  props: {},
   data () {
     return {
       title: ''
@@ -34,7 +29,9 @@ export default {
         complete: false
       }
       // 3.添加到todos
-      this.addTodo(todo)
+      // this.addTodo(todo)
+      // 3.触发自定义时间addTodo
+      this.$emit('addTodo', todo)
       // 4.清空输入
       this.title = ''
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-      <ToDoHeader :addTodo="addTodo"/>
+      <ToDoHeader @addTodo="addTodo"/><!--给ToDOHeader标签绑定addTodo时间监听-->
       <ToDoList :todos="todos" :deleteTodo="deleteTodo"/>
       <ToDoFooter :todos="todos" :deleteCompleteTodos="deleteCompleteTodos" :selectAll="selectAll"/>
     </div>
