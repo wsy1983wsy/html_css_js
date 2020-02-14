@@ -1,7 +1,9 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-      <ToDoHeader @addTodo="addTodo"/><!--给ToDOHeader标签绑定addTodo时间监听-->
+      <!--给ToDOHeader标签绑定addTodo时间监听-->
+      <!--      <ToDoHeader @addTodo="addTodo"/>-->
+      <ToDoHeader ref="header"/>
       <ToDoList :todos="todos" :deleteTodo="deleteTodo"/>
       <ToDoFooter :todos="todos" :deleteCompleteTodos="deleteCompleteTodos" :selectAll="selectAll"/>
     </div>
@@ -29,6 +31,10 @@ export default {
       //   {title: 'coding', complete: false},
       // ]
     }
+  },
+  mounted () {
+    //给ToDoHeader标签绑定addTodo时间监听
+    this.$refs.header.$on('addTodo', this.addTodo)
   },
   methods: {
     addTodo (todo) {
