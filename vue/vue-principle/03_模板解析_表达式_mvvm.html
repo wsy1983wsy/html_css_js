@@ -16,7 +16,15 @@
 <script type="text/javascript" src="js/mvvm/observer.js"></script>
 <script type="text/javascript" src="js/mvvm/watcher.js"></script>
 <script type="text/javascript">
-
+  const mvvm = new MVVM({
+    el: "#test",
+    data: {
+      name: "Hello"
+    }
+  });
+  console.log(mvvm.name, mvvm);//vm代理对data数据的读操作
+  mvvm.name = "world";//vm代理对data数据的写操作
+  console.log(mvvm._data.name);
 </script>
 </body>
 </html>
