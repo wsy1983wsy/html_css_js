@@ -1,7 +1,18 @@
 <template>
+  <div>
+    <h2>Home 组件</h2>
     <div>
-      Home
+      <ul class="nav nav-tabs">
+        <li>
+          <router-link to="/home/news">News</router-link>
+        </li>
+        <li>
+          <router-link to="/home/msg">Message</router-link>
+        </li>
+      </ul>
+      <router-view></router-view>
     </div>
+  </div>
 </template>
 
 <script>

@@ -5,6 +5,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import About from '../views/About'
 import Home from '../views/Home'
+import News from '../views/News'
+import Message from '../views/Message'
 
 // 声明使用vue-router插件
 /*
@@ -24,10 +26,25 @@ export default new VueRouter({
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          // path: '/news',path最左侧的/ 永远代码的是根路径
+          path: 'news',
+          component: News
+        },
+        {
+          path: 'msg',
+          component: Message
+        },
+        {
+          path: '', // 默认显示
+          component: News
+        }
+      ]
     },
     {
-      path: '/',
+      path: '/', // 默认显示
       component: About
     }
   ]
