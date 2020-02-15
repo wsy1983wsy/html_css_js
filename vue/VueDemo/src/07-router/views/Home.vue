@@ -10,6 +10,7 @@
           <router-link to="/home/msg">Message</router-link>
         </li>
       </ul>
+      <hr>
       <router-view></router-view>
     </div>
   </div>

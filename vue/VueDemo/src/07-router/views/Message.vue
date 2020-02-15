@@ -1,11 +1,13 @@
 <template>
-  <ul>
-    <li v-for="(msg,index) in msgs" :key="msg.id">
-      <a href="??/msg.id">{{msg.title}}</a>
-
-
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li v-for="(msg,index) in msgs" :key="msg.id">
+        <router-link :to="`/home/msg/detail/${msg.id}`">{{msg.title}}</router-link>
+      </li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -34,7 +36,7 @@ export default {
         }
       ]
       this.msgs = messages
-    }, 1000)
+    }, 100)
   }
 }
 </script>

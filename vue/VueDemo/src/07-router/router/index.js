@@ -7,6 +7,7 @@ import About from '../views/About'
 import Home from '../views/Home'
 import News from '../views/News'
 import Message from '../views/Message'
+import MessageDetail from '../views/MessageDetail'
 
 // 声明使用vue-router插件
 /*
@@ -35,7 +36,14 @@ export default new VueRouter({
         },
         {
           path: 'msg',
-          component: Message
+          component: Message,
+          children: [
+            {
+              // path: '/home/msg/detail/:id',
+              path: 'detail/:id',
+              component: MessageDetail
+            }
+          ]
         },
         {
           path: '', // 默认显示
