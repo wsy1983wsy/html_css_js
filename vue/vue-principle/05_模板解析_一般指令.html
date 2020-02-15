@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>05_模板解析_一般指令</title>
-  <style>
-    .aclass {
-      color: red;
-    }
-    .bClass {
-      font-size: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>05_模板解析_一般指令</title>
+    <style>
+        .aclass {
+            color: red;
+        }
+
+        .bClass {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
 <div id="test">
-
+    <p v-text="msg"></p>
+    <p v-html="msg"></p>
+    <p v-class="myClass">元旦快乐</p>
 </div>
 
 <script type="text/javascript" src="js/mvvm/compile.js"></script>
@@ -22,7 +25,14 @@
 <script type="text/javascript" src="js/mvvm/observer.js"></script>
 <script type="text/javascript" src="js/mvvm/watcher.js"></script>
 <script type="text/javascript">
-
+    new MVVM({
+        el: "#test",
+        data: {
+            msg: "<a href='http://www.baidu.com'>百度</a>",
+            myClass: "aclass"
+        },
+        methods: {}
+    });
 </script>
 </body>
 </html>

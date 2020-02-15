@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>03_模板解析_表达式_vue</title>
+    <meta charset="UTF-8">
+    <title>03_模板解析_表达式_mvvm</title>
 </head>
 <body>
 
 <div id="test">
-
+    <p>{{name}}</p>
 </div>
 
 
@@ -16,15 +16,13 @@
 <script type="text/javascript" src="js/mvvm/observer.js"></script>
 <script type="text/javascript" src="js/mvvm/watcher.js"></script>
 <script type="text/javascript">
-  const mvvm = new MVVM({
-    el: "#test",
-    data: {
-      name: "Hello"
-    }
-  });
-  console.log(mvvm.name, mvvm);//vm代理对data数据的读操作
-  mvvm.name = "world";//vm代理对data数据的写操作
-  console.log(mvvm._data.name);
+    new MVVM({
+        el: "#test",
+        data: {
+            name: "Hello"
+        }
+    });
+
 </script>
 </body>
 </html>
