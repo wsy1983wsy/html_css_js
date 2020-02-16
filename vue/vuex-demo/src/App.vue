@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p>click {{count}} times ,count is {{evenOrOdd}}</p>
+    <p>click {{$store.state.count}} times ,count is {{evenOrOdd}}</p>
     <button @click="increment">+</button>
     <button @click="reduce">-</button>
     <button @click="incrementIfOdd">increment if odd</button>
@@ -11,40 +11,26 @@
 <script>
   export default {
     name: "App",
-    data() {
-      return {
-        count: 0
-      }
-    },
     computed: {
       evenOrOdd() {
-        if (this.count % 2 == 0) {
-          return "偶数"
-        } else {
-          return "奇数";
-        }
+        return this.$store.getters.evenOrOdd;
       }
     },
     methods: {
       increment() {
-        let count = this.count;
-        this.count = count + 1;
+        // 通知vuex去增加
+        // 触发增加事件
+        this.$store.dispatch('increment')
       },
       reduce() {
-        if (this.count <= 0) {
-          return;
-        }
-        let count = this.count;
-        this.count = count - 1;
+
+        this.$store.dispatch('reduce')
       },
       incrementIfOdd() {
-        let count = this.count;
-        if (count % 2 == 1) {
-          this.count = count + 1;
-        }
+        this.$store.dispatch('incrementIfOdd')
       },
       incrementAsync() {
-        setTimeout(this.increment, 1000);
+        this.$store.dispatch('incrementAsync')
       }
     }
   }
